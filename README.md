@@ -14,13 +14,13 @@ clock.
 
 Call the configuration function to set up the clock.
 
-SpdifTransmitPortConfig(onebitPort, clockblock, masterClockPort)
+* SpdifTransmitPortConfig(onebitPort, clockblock, masterClockPort)
 
 Then call one of four functions to output data:
 
-  void SpdifTransmit_1(oneBitPort, dataChannel, ctrl_left[2], ctrl_right[2])
-  void SpdifTransmit_2(oneBitPort, dataChannel, ctrl_left[2], ctrl_right[2])
-  void SpdifTransmit_4(oneBitPort, dataChannel, ctrl_left[2], ctrl_right[2])
+* SpdifTransmit_1(oneBitPort, dataChannel, ctrl_left[2], ctrl_right[2])
+* SpdifTransmit_2(oneBitPort, dataChannel, ctrl_left[2], ctrl_right[2])
+* SpdifTransmit_4(oneBitPort, dataChannel, ctrl_left[2], ctrl_right[2])
 
 Depending on whether the master clock is 1, 2, or 4 times the bit rate.
 The transmit function will in a loop read a word of dataChannel, and
@@ -35,7 +35,7 @@ The S/PDIF receiver is generated from a state machine description. The
 generated code requires a one bit buffered input port (transfer width of
 4), and a clock block to work. Call:
 
-SpdifReceive(oneBitPort, dataChannel, initialDivider, clockBlock)
+* SpdifReceive(oneBitPort, dataChannel, initialDivider, clockBlock)
 
 Set the initial divider to 1, 2, or 4 depending on whether you expect
 192000, 96000/88290, or 48000/44100 sample rates. The reference clock must
