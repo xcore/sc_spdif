@@ -10,17 +10,15 @@ Call the configuration function to set up the clock.
 
 * SpdifTransmitPortConfig(onebitPort, clockblock, masterClockPort)
 
-Then call one of four functions to output data:
+Then call the function that outputs data:
 
-* SpdifTransmit_1(oneBitPort, dataChannel, ctrl_left[2], ctrl_right[2])
-* SpdifTransmit_2(oneBitPort, dataChannel, ctrl_left[2], ctrl_right[2])
-* SpdifTransmit_4(oneBitPort, dataChannel, ctrl_left[2], ctrl_right[2])
+* SpdifTransmit(oneBitPort, dataChannel)
 
-Depending on whether the master clock is 1, 2, or 4 times the bit rate.
-The transmit function will in a loop read a word of dataChannel, and
-transmit it over the oneBitPort. To stop the function send an END control
-token over the data channel. The four integers supplied are the control
-words that are to be transmitted with the S/PDIF stream.
+The transmit function will in a loop expect on the channel
+* The sample frequency (in Hz as an int)
+* The master clock frequency (in Hz as an int)
+* Left and right sample values (each 32 bits, left aligned)
+* An END control token if either of the frequencies needs changing. 
 
 S/PDIF receive
 --------------
