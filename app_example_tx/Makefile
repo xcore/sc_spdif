@@ -29,8 +29,8 @@ USED_MODULES = module_spdif_tx
 # for compiling XMOS applications. You should not need to edit below here.
 
 
-# Use the latest 1v* version of module_xmos_common
--include ../module_xmos_common/build/Makefile.common
+# Use the latest 1v* version of module_xcommon
+-include ../module_xcommon/build/Makefile.common
 -include ../../xcommon/module_xcommon/build/Makefile.common
 
 # The final target of the build. This is usually dependent on a binary file

@@ -23,4 +23,5 @@ int main(void) {
         transmitSpdif(c);
         generate(c);
     }
+    return 0;
 }

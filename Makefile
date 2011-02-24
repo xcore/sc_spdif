@@ -40,7 +40,7 @@
 # This variable should contain a space separated list of all
 # the directories containing buildable applications (usually
 # prefixed with the app_ prefix)
-BUILD_SUBDIRS = app_template
+BUILD_SUBDIRS = app_example_rx app_example_tx
 
 # This variable should contain a space separated list of all
 # the directories containing buildable plugins (usually
@@ -49,7 +49,7 @@ PLUGIN_SUBDIRS =
 
 # This variable should contain a space separated list of all
 # the directories containing applications with a 'test' make target
-TEST_SUBDIRS = app_template
+TEST_SUBDIRS = app_example_rx app_example_tx
 
 # Provided that the above variables are set you shouldn't need to modify
 # the targets below here. 

@@ -27,4 +27,5 @@ int main(void) {
         SpdifReceive(oneBitPort, c, 1, clockblock);
         generate(c);
     }
+    return 0;
 }
