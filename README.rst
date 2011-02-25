@@ -1,9 +1,7 @@
 S/PDIF 
 ...........
 
-This is SPDIF
-
-:Last stable release:   unreleased
+:Last_stable_release:   unreleased
 
 :Status:  Feature complete
 
