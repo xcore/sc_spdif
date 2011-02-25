@@ -1,14 +1,15 @@
-S/PDIF Rx and Tx SOFTWARE COMPONENT
-.................................
+S/PDIF 
+...........
 
-:Version: 
+:Last Stable Release: 
   unreleased
 
 :Status:
   Feature complete
 
 :Maintainer:
-  Henk Muller
+  Henk Muller (github: henkmuller)
+
 
 The two modules in this library are used to transmit and receive
 S/PDIF streams, http://en.wikipedia.org/wiki/Spdif. The rx_generator directory contains the programs that are used
@@ -31,10 +32,10 @@ Known Issues
 
 none
 
-Required Modules
-=================
+Required Repositories
+================
 
-xcommon
+   * xcommon git@github.com:xmos/xcommon.git
 
 Support
 =======
