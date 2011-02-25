@@ -35,7 +35,7 @@ none
 Required Repositories
 ================
 
-   * xcommon git@github.com:xmos/xcommon.git
+   * xcommon git\@github.com:xmos/xcommon.git
 
 Support
 =======
