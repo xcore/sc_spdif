@@ -8,11 +8,11 @@ clock.
 
 Call the configuration function to set up the clock.
 
-* SpdifTransmitPortConfig(onebitPort, clockblock, masterClockPort)
+* ``SpdifTransmitPortConfig(onebitPort, clockblock, masterClockPort)``
 
 Then call the function that outputs data:
 
-* SpdifTransmit(oneBitPort, dataChannel)
+* ``SpdifTransmit(oneBitPort, dataChannel)``
 
 The transmit function will in a loop expect on the channel
 * The sample frequency (in Hz as an int)
@@ -27,7 +27,7 @@ The S/PDIF receiver is generated from a state machine description. The
 generated code requires a one bit buffered input port (transfer width of
 4), and a clock block to work. Call:
 
-* SpdifReceive(oneBitPort, dataChannel, initialDivider, clockBlock)
+* ``SpdifReceive(oneBitPort, dataChannel, initialDivider, clockBlock)``
 
 Set the initial divider to 1, 2, or 4 depending on whether you expect
 192000, 96000/88290, or 48000/44100 sample rates. The reference clock must
