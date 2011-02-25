@@ -1,14 +1,11 @@
 S/PDIF 
 ...........
 
-:LastStableRelease: 
-  unreleased
+:LastStableRelease:   unreleased
 
-:Status:
-  Feature complete
+:Status:  Feature complete
 
-:Maintainer:
-  Henk Muller (github: henkmuller)
+:Maintainer:  Henk Muller (github: henkmuller)
 
 
 The two modules in this library are used to transmit and receive
