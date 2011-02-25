@@ -1,7 +1,7 @@
 S/PDIF 
 ...........
 
-:Last Stable Release: 
+:LastStableRelease: 
   unreleased
 
 :Status:
