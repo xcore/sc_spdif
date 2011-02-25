@@ -1,6 +1,41 @@
-S/PDIF Rx and Tx
-================
+S/PDIF Rx and Tx SOFTWARE COMPONENT
+.................................
+
+:Version: 
+  unreleased
+
+:Status:
+  Feature complete
+
+:Maintainer:
+  Henk Muller
 
 The two modules in this library are used to transmit and receive
-S/PDIF streams. The rx_generator directory generates the state machine used
+S/PDIF streams, http://www.wikipedia.org/spdif. The rx_generator directory generates the state machine used
 by the receiver.
+
+Key Features
+============
+
+   * RX and TX in separate threads
+   * Rates of 44,100 up to 192,000 Samples/sec
+
+Firmware Overview
+=================
+
+RX and TX are defined as functions which each run forever.
+
+Known Issues
+============
+
+none
+
+Required Modules
+=================
+
+xcommon
+
+Support
+=======
+
+Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the manitainer for this line.
