@@ -11,7 +11,8 @@ S/PDIF Rx and Tx SOFTWARE COMPONENT
   Henk Muller
 
 The two modules in this library are used to transmit and receive
-S/PDIF streams, http://www.wikipedia.org/spdif. The rx_generator directory generates the state machine used
+S/PDIF streams, http://en.wikipedia.org/wiki/Spdif. The rx_generator directory contains the programs that are used
+to generate the state machine used
 by the receiver.
 
 Key Features
