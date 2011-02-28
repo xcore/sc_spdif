@@ -39,4 +39,4 @@ or FRAME_Z to indicate Left, Right, or Start of frame data. The function
 does not return unless compiled in DEBUG mode in which case it returns any
 time that it loses synchronisation.
 
-image:: test.svg
+.. image:: test.svg
