@@ -38,3 +38,5 @@ represent the data value, and bits 0..3 are set to one of FRAME_X, FRAME_Y
 or FRAME_Z to indicate Left, Right, or Start of frame data. The function
 does not return unless compiled in DEBUG mode in which case it returns any
 time that it loses synchronisation.
+
+image:: test.svg
