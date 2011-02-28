@@ -40,3 +40,5 @@ does not return unless compiled in DEBUG mode in which case it returns any
 time that it loses synchronisation.
 
 .. image:: test.svg
+   :width: 480 px
+   :height: 480 px
