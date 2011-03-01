@@ -1,7 +1,7 @@
 S/PDIF 
 ...........
 
-:Last_stable_release:   unreleased
+:table release:   unreleased
 
 :Status:  Feature complete
 
