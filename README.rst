@@ -5,7 +5,7 @@ S/PDIF
 
 :Status:  Feature complete
 
-:Maintainer:  Henk Muller (github: henkmuller)
+:Maintainer:  https://github.com/henkmuller
 
 
 The two modules in this library are used to transmit and receive
@@ -16,8 +16,8 @@ by the receiver.
 Key Features
 ============
 
-   * RX and TX in separate threads
-   * Rates of 44,100 up to 192,000 Samples/sec
+* RX and TX in separate threads
+* Rates of 44,100 up to 192,000 Samples/sec
 
 Firmware Overview
 =================
