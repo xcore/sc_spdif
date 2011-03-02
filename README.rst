@@ -5,6 +5,8 @@ S/PDIF
 
 :Status:  Feature complete
 
+:Description: Transmit and Receive S/PDIF streams.
+
 :Maintainer:  https://github.com/henkmuller
 
 
