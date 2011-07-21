@@ -8,6 +8,7 @@
     <location>ssh://git@github.com/xcore/sc_spdif</location>
     <name>sc_spdif</name>
     <maintainer>henkmuller</maintainer>
+    <release parenthash = "083c65a7f4ba50c5f8b2c87d7bd8455d41520d74" version = "1.2.0beta0"></release>
     <scope>example</scope>
     <vendor>XMOS</vendor>
     <xpd_version>1.0</xpd_version>
