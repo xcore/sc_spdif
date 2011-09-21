@@ -51,7 +51,7 @@ The precise transmission frequencies supported depend on the availability
 of an external clock (eg, a PLL or a crystal oscillator) that runs at a
 frequency of::
 
-  2 * channels * sampleRate * 32
+  channels * sampleRate * 64
 
 or a power-of-2 multiple. For example, for 2 channels at 192 Khz the
 external clock has to run at a frequency of 24.576 MHz. This same frequency
