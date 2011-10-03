@@ -43,9 +43,10 @@ port. If available, then only a single 1-bit port is required to output
 S/PDIF. If not, then two ports are required, one for the signal output, and
 one for the master-clock input.
 
-An external flip-flop is required to resynchronise the data signal to the
-master-clock if more than 2 channels are used, or if the sample rate is
-higher than 48 KHz. 
+The jitter on the output-pin is within tolerances allowed by the spec
+provided a 500 MHz part is used. It is recommended to use an
+external flip-flop to resynchronise the data signal to the master-clock,
+which will eliminate the remaining jitter on the S/PDIF edges.
 
 The precise transmission frequencies supported depend on the availability
 of an external clock (eg, a PLL or a crystal oscillator) that runs at a
