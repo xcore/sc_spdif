@@ -23,7 +23,7 @@ module_spdif_tx
 ---------------
 
 This module can transmit S/PDIF signals at the following rates
-(assuming eight threads on a 400 MHz part):
+(assuming XXX threads on a 400 MHz part):
 
 +---------------------------+-----------------------+------------------------+
 | Functionality provided    | Resources required    | Status                 | 
@@ -67,24 +67,25 @@ module_spdif_rx
 ---------------
 
 
-This module can receive S/PDIF signals at the following rates
-(assuming X threads on a Y MHz part):
+This module can receive S/PDIF signals at three different rates. It
+automatically adjusts to the incoming rate, but for high rates a fast
+thread is required. The thread will fail silently if it does not have
+enough MIPS to parse the input stream.
 
-+---------------------------+-----------------------+------------------------+
-| Functionality provided    | Resources required    | Status                 | 
-+----------+----------------+------------+----------+                        |
-| Channels | Sample Rate    | 1-bit port | Memory   |                        |
-+----------+----------------+------------+----------+------------------------+
-| 2        | up to 192 KHz  | 1          | 3 KB     | Implemented and tested |
-+----------+----------------+------------+----------+------------------------+
-| 4        | up to 96 KHz   | 1          | 3 KB     | Implemented and tested |
-+----------+----------------+------------+----------+------------------------+
-| 8        | up to 48 KHz   | 1          | 3 KB     | Implemented and tested |
-+----------+----------------+------------+----------+------------------------+
++---------------------------+------------------------------------+------------------------+
+| Functionality provided    | Resources required                 | Status                 | 
++----------+----------------+------------+--------+--------------+                        |
+| Channels | Sample Rate    | 1-bit port | Memory | Thread rate  |                        |
++----------+----------------+------------+--------+--------------+------------------------+
+| 2        | up to 192 KHz  | 1          | 3 KB   | 80 MIPS      | Implemented and tested |
++----------+----------------+------------+--------+--------------+------------------------+
+| 4        | up to 96 KHz   | 1          | 3 KB   | 40 MIPS      | Implemented and tested |
++----------+----------------+------------+--------+--------------+------------------------+
+| 8        | up to 48 KHz   | 1          | 3 KB   | 20 MIPS      | Implemented and tested |
++----------+----------------+------------+--------+--------------+------------------------+
 
-A single 50-MIPS thread is required. The receiver does not require any
-external clock, but can only recover 44.1, 48, 88.2, 96, and 192 KHz
-sample rates.
+The receiver does not require any external clock, but can only recover
+44.1, 48, 88.2, 96, and 192 KHz sample rates.
 
 Typical applications for this module include digital speakers,
 digital mixing desks, USB audio, and AVB.
