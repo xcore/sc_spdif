@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <xpd>
     <dependency repo = "xcommon">
-        <githash>e3815133bf6db792ab03589ee8faeabb8c0acfe4</githash>
+        <githash>2d310cc19558a756d2477625338491f66ff0e57d</githash>
         <uri>ssh://git@github.com/xcore/xcommon</uri>
     </dependency>
     <description>S/PDIF Component</description>
@@ -9,7 +9,8 @@
     <name>sc_spdif</name>
     <maintainer>henkmuller</maintainer>
     <release parenthash = "083c65a7f4ba50c5f8b2c87d7bd8455d41520d74" version = "1.2.0beta0" githash = "86fb3fef67ea830f83d7515fafa9400785518b16"></release>
-    <release parenthash = "be73c7f8940a43d6c3b01931bee351f0593de933" version = "1.2.0beta1"></release>
+    <release parenthash = "be73c7f8940a43d6c3b01931bee351f0593de933" version = "1.2.0beta1" githash = "737d315c27a38edb4314e756b65655a2698ec16d bc21d8854cdc668973a0a289f97eb2d85bf32bcd"></release>
+    <release parenthash = "96820e2aa15133b1027b482fa4c0709a69eb08cb" version = "1.2.0rc0"></release>
     <scope>example</scope>
     <vendor>XMOS</vendor>
     <xpd_version>1.0</xpd_version>
