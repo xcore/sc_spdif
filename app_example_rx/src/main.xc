@@ -3,34 +3,35 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
+//::declaration
 #include <xs1.h>
 #include "SpdifReceive.h"
 
 buffered in port:4 oneBitPort = XS1_PORT_1F;
 clock clockblock = XS1_CLKBLK_1;
+//::
 
-void generate(streaming chanend c) {
+//::data handling
+void handleSamples(streaming chanend c) {
+    int v, left, right;
     while(1) {
-        int v;
-        int left, right;
         c :> v;
-        switch(v & 0xF) {
-        case FRAME_X:
-        case FRAME_Z:
-            left = v >> 4;
-            break;
-        case FRAME_Y:
-            right = v >> 4;
-            break;
+        if((v & 0xF) == FRAME_Y) {
+            right = (v & ~0xf) << 4;
+            // operate on left and right
+        } else {
+            left = (v & ~0xf) << 4;
         }
     }
 }
 
+//::main program
 int main(void) {
     streaming chan c;
     par {
         SpdifReceive(oneBitPort, c, 1, clockblock);
-        generate(c);
+        handleSamples(c);
     }
     return 0;
 }
+//::
