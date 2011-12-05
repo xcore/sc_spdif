@@ -1,0 +1,203 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>S/PDIF Receive &mdash; S/PDIF 1v0 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1v0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="_static/xcomment.js"></script>
+    <link rel="top" title="S/PDIF 1v0 documentation" href="index.html" />
+    <link rel="next" title="S/PDIF Transmit" href="api-tx.html" />
+    <link rel="prev" title="SPDIF software" href="summary.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="summary.html"
+                        title="previous chapter"> &lt&lt </a>
+<a href="api-tx.html"
+                        title="next chapter"> &gt&gt </a></p>
+</div>
+
+            
+  <div class="section" id="s-pdif-receive">
+<h1>S/PDIF Receive<a class="headerlink" href="#s-pdif-receive" title="Permalink to this headline">¶</a></h1>
+<p>The S/PDIF receive module comprises a single thread that parses data as it
+arrives on a one-bit port and that outputs words of data onto a streaming
+channel end. Each word of data carries 24 bits of data and 4 bits of
+channel information.</p>
+<p>This modules requires the reference clock to be exactly 100 Mhz.</p>
+<div class="section" id="symbolic-constants">
+<h2>Symbolic constants<a class="headerlink" href="#symbolic-constants" title="Permalink to this headline">¶</a></h2>
+<dl class="macro">
+<dt id="FRAME_X">
+<tt class="descname">FRAME_X</tt><a class="headerlink" href="#FRAME_X" title="Permalink to this definition">¶</a></dt>
+<dd><p>This constant defines the four least-significant bits of the first sample of a frame (typically a sample from the left channel)</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="FRAME_Y">
+<tt class="descname">FRAME_Y</tt><a class="headerlink" href="#FRAME_Y" title="Permalink to this definition">¶</a></dt>
+<dd><p>This constant defines the four least-significant bits of the second or later sample of a frame (typically a sample from the right channel, unless there are more than two channels)</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="FRAME_Z">
+<tt class="descname">FRAME_Z</tt><a class="headerlink" href="#FRAME_Z" title="Permalink to this definition">¶</a></dt>
+<dd><p>This constant defines the four least-significant bits of the first sample of the first frame of a block (typically a sample from the left channel)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="api">
+<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="SpdifReceive">
+void <tt class="descname">SpdifReceive</tt><big>(</big>in buffered port:4<em>&nbsp;p</em>, streaming chanend<em>&nbsp;c</em>, int<em>&nbsp;initial_divider</em>, clock<em>&nbsp;clk</em><big>)</big><a class="headerlink" href="#SpdifReceive" title="Permalink to this definition">¶</a></dt>
+<dd><p>S/PDIF receive function.</p>
+<p>This function needs 1 thread and no memory other than ~2800 bytes of program code. It can do 11025, 12000, 22050, 24000, 44100, 48000, 88200, 96000, and 192000 Khz. When the decoder encounters a long series of zeros it will lower the divider; when it encounters a short series of 0-1 transitions it will increase the divider.</p>
+<p>Output: the received 24-bit sample values are output as a word on the streaming channel end. Each value is shifted up by 4-bits with the bottom four bits being one of FRAME_X, FRAME_Y, or FRAME_Z. The bottom for bits should be removed whereupon the sample value should be sign extended.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>p</strong> &#8211; S/PDIF input port. This port must be 4-bit buffered, declared as <tt class="docutils literal"><span class="pre">in</span> <span class="pre">buffered</span> <span class="pre">port:4</span></tt></li>
+<li><strong>c</strong> &#8211; channel to output samples to</li>
+<li><strong>initial_divider</strong> &#8211; initial divide for initial estimate of sample rate For a 100Mhz reference clock, use an initial divider of 1 for 192000, 2 for 96000/88200, and 4 for 48000/44100.</li>
+<li><strong>clk</strong> &#8211; clock block sourced from the 100 MHz reference clock.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>An example program is shown below. An input port and a clock block must be
+declared. Neither should be configured:</p>
+<div class="highlight-none"><div class="highlight"><pre>#include &lt;xs1.h&gt;
+#include &quot;SpdifReceive.h&quot;
+
+buffered in port:4 oneBitPort = XS1_PORT_1F;
+clock clockblock = XS1_CLKBLK_1;
+</pre></div>
+</div>
+<p>All data samples are being received on a streaming channel, after being
+parsed by the receive process. After reading a sample value from the
+channel, it must be converted to a signed sample value whilst removing the
+tag identifying the channel information. In this example, we perform this
+operation by masking off the bottom four bits and shifting the sample-data
+into the most significant 24-bits, ready to be used on, for example, I2S:</p>
+<div class="highlight-none"><div class="highlight"><pre>void handleSamples(streaming chanend c) {
+    int v, left, right;
+    while(1) {
+        c :&gt; v;
+        if((v &amp; 0xF) == FRAME_Y) {
+            right = (v &amp; ~0xf) &lt;&lt; 4;
+            // operate on left and right
+        } else {
+            left = (v &amp; ~0xf) &lt;&lt; 4;
+        }
+    }
+}
+</pre></div>
+</div>
+<p>The main program in this example simply starts the S/PDIF receive thread,
+and the data handling thread in parallel:</p>
+<div class="highlight-none"><div class="highlight"><pre>int main(void) {
+    streaming chan c;
+    par {
+        SpdifReceive(oneBitPort, c, 1, clockblock);
+        handleSamples(c);
+    }
+    return 0;
+}
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">S/PDIF (1v0)</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="summary.html">SPDIF software</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">S/PDIF Receive</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#symbolic-constants">Symbolic constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api-tx.html">S/PDIF Transmit</a></li>
+</ul>
+
+<div id="searchbox" style="display: none;margin-bottom: 10px;">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

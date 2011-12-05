@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>S/PDIF Transmit &mdash; S/PDIF 1v0 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1v0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="_static/xcomment.js"></script>
+    <link rel="top" title="S/PDIF 1v0 documentation" href="index.html" />
+    <link rel="prev" title="S/PDIF Receive" href="api-rx.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="api-rx.html"
+                        title="previous chapter"> &lt&lt </a>
+</div>
+
+            
+  <div class="section" id="s-pdif-transmit">
+<h1>S/PDIF Transmit<a class="headerlink" href="#s-pdif-transmit" title="Permalink to this headline">¶</a></h1>
+<p><em>This section is to be completed</em></p>
+<p>There are two modules that can produce an S/PDIF signal. The simplest
+module is a single thread that receives samples over a channel and that
+outputs data on the port, and the other module has a thread that receives
+samples over a channel and it produces the output on a channel. The latter
+is useful if the S/PDIF output port is on a different core.</p>
+<p>The S/PDIF transmit modules require a one-bit output port, a clock block,
+and a master clock coming in on a one-bit port.</p>
+<div class="section" id="api">
+<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="SpdifTransmitPortConfig">
+void <tt class="descname">SpdifTransmitPortConfig</tt><big>(</big>out buffered port:32<em>&nbsp;p</em>, clock<em>&nbsp;cl</em>, in port<em>&nbsp;p_mclk</em><big>)</big><a class="headerlink" href="#SpdifTransmitPortConfig" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SpdifTransmit">
+void <tt class="descname">SpdifTransmit</tt><big>(</big>buffered out port:32<em>&nbsp;p</em>, chanend<em>&nbsp;c</em><big>)</big><a class="headerlink" href="#SpdifTransmit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function expects a buffered single bit port clock from the master clock.</p>
+<p>All channel communication is done via builtins (e.g. outuint, outct etc.)</p>
+<p>On startup expects two words over the channel:</p>
+<ol class="arabic simple">
+<li>Desired sample frequency (in Hz) 2) Master clock frequency (in Hz)</li>
+</ol>
+<p>Then sample pairs:</p>
+<ol class="arabic simple">
+<li>Left sample 2) Right sample</li>
+</ol>
+<p>If a XS1_CT_END token is received, the thread stops and waits for new sample/master freq pair</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>p</strong> &#8211; S/PDIF tx port</li>
+<li><strong>c</strong> &#8211; Channel-end for sample freq and samples</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>An example program is shown below:</p>
+<div class="highlight-none"><div class="highlight"><pre>TBC.
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">S/PDIF (1v0)</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="summary.html">SPDIF software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-rx.html">S/PDIF Receive</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">S/PDIF Transmit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none;margin-bottom: 10px;">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

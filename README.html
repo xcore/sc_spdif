@@ -1,0 +1,131 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>S/PDIF transmit &mdash; S/PDIF 1v0 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1v0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="_static/xcomment.js"></script>
+    <link rel="top" title="S/PDIF 1v0 documentation" href="index.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+</div>
+
+            
+  <div class="section" id="s-pdif-transmit">
+<h1>S/PDIF transmit<a class="headerlink" href="#s-pdif-transmit" title="Permalink to this headline">¶</a></h1>
+<p>Requires a clock-block and two ports: a one bit buffered output port (transfer width of 32)
+and a one bit unbuffered input port with the master clock. On the outside
+you will need a flip-flop to resynchronise the signal with the master
+clock.</p>
+<p>Call the configuration function to set up the clock.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">SpdifTransmitPortConfig(onebitPort,</span> <span class="pre">clockblock,</span> <span class="pre">masterClockPort)</span></tt></li>
+</ul>
+<p>Then call the function that outputs data:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">SpdifTransmit(oneBitPort,</span> <span class="pre">dataChannel)</span></tt></li>
+</ul>
+<p>The transmit function will in a loop expect on the channel
+* The sample frequency (in Hz as an int)
+* The master clock frequency (in Hz as an int)
+* Left and right sample values (each 32 bits, left aligned)
+* An END control token if either of the frequencies needs changing.</p>
+</div>
+<div class="section" id="s-pdif-receive">
+<h1>S/PDIF receive<a class="headerlink" href="#s-pdif-receive" title="Permalink to this headline">¶</a></h1>
+<p>The S/PDIF receiver is generated from a state machine description. The
+generated code requires a one bit buffered input port (transfer width of
+4), and a clock block to work. Call:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">SpdifReceive(oneBitPort,</span> <span class="pre">dataChannel,</span> <span class="pre">initialDivider,</span> <span class="pre">clockBlock)</span></tt></li>
+</ul>
+<p>Set the initial divider to 1, 2, or 4 depending on whether you expect
+192000, 96000/88290, or 48000/44100 sample rates. The reference clock must
+be 100 MHz</p>
+<p>The function will in a loop output samples to the dataChannel; bits 4..27
+represent the data value, and bits 0..3 are set to one of FRAME_X, FRAME_Y
+or FRAME_Z to indicate Left, Right, or Start of frame data. The function
+does not return unless compiled in DEBUG mode in which case it returns any
+time that it loses synchronisation.</p>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">S/PDIF (1v0)</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="summary.html">SPDIF software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-rx.html">S/PDIF Receive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-tx.html">S/PDIF Transmit</a></li>
+</ul>
+
+<div id="searchbox" style="display: none;margin-bottom: 10px;">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+
