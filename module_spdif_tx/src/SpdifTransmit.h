@@ -31,6 +31,15 @@
  */
 void SpdifTransmit(buffered out port:32 p, chanend c);
 
+/**
+ * Configure out port to be clocked by clock block, driven from master clock input.
+ *
+ * Must be called before SpdifTransmit
+ *
+ * @param   p           S/PDIF tx port
+ * @param   cl          Clock block to be used
+ * @param   p_mclk      Master-clock input port
+ */
 void SpdifTransmitPortConfig(out buffered port:32 p, clock cl, in port p_mclk);
 
 #endif
