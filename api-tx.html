@@ -123,23 +123,6 @@ void <tt class="descname">SpdifTransmit</tt><big>(</big>buffered out port:32<em>
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>An example program is shown below. An output port, a master-clock input port and a clock block must be
 declared:</p>
-<div class="highlight-none"><div class="highlight"><pre>#include &lt;xs1.h&gt;
-#include &quot;SpdifTransmit.h&quot;
-
-#define SAMPLE_FREQUENCY_HZ 48000
-#define MASTER_CLOCK_FREQUENCY_HZ 24576000
-
-buffered out port:32 oneBitPort = XS1_PORT_1F;
-in port masterClockPort = XS1_PORT_1E;
-clock clockblock = XS1_CLKBLK_1;
-</pre></div>
-</div>
-<p>All data samples are being received on a streaming channel, after being
-parsed by the receive process. After reading a sample value from the
-channel, it must be converted to a signed sample value whilst removing the
-tag identifying the channel information. In this example, we perform this
-operation by masking off the bottom four bits and shifting the sample-data
-into the most significant 24-bits, ready to be used on, for example, I2S:</p>
 <div class="highlight-none"><div class="highlight"><pre>void transmitSpdif(chanend c)  {
     SpdifTransmitPortConfig(oneBitPort, clockblock, masterClockPort);
     SpdifTransmit(oneBitPort, c);

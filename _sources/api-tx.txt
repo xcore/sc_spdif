@@ -33,12 +33,7 @@ declared:
   :start-after: //::declaration
   :end-before: //::
 
-All data samples are being received on a streaming channel, after being
-parsed by the receive process. After reading a sample value from the
-channel, it must be converted to a signed sample value whilst removing the
-tag identifying the channel information. In this example, we perform this
-operation by masking off the bottom four bits and shifting the sample-data
-into the most significant 24-bits, ready to be used on, for example, I2S:
+  TBC.
 
 .. literalinclude:: app_example_tx/src/main.xc
   :start-after: //::data handling
