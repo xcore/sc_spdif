@@ -16,11 +16,13 @@
  * On startup expects two words over the channel:
  *
  * 1) Desired sample frequency (in Hz)
+ *
  * 2) Master clock frequency (in Hz)
  *
  * Then sample pairs:
  *
  * 1) Left sample
+ *
  * 2) Right sample
  *
  *
@@ -34,7 +36,7 @@ void SpdifTransmit(buffered out port:32 p, chanend c);
 /**
  * Configure out port to be clocked by clock block, driven from master clock input.
  *
- * Must be called before SpdifTransmit
+ * Must be called before SpdifTransmit()
  *
  * @param   p           S/PDIF tx port
  * @param   cl          Clock block to be used
