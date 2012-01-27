@@ -26,6 +26,11 @@ Firmware Overview
 
 RX and TX are defined as functions which each run forever.
 
+Documentation
+=============
+
+Full documentation can be found at: http://xcore.github.com/sc_spdif/
+
 Known Issues
 ============
 
