@@ -26,6 +26,22 @@ Example
 =======
 
 
-An example program is shown below::
+An example program is shown below. An output port, a master-clock input port and a clock block must be
+declared:
+
+.. literalinclude:: app_example_tx/src/main.xc
+  :start-after: //::declaration
+  :end-before: //::
 
   TBC.
+
+.. literalinclude:: app_example_tx/src/main.xc
+  :start-after: //::data handling
+  :end-before: //::
+
+The main program in this example simply starts the S/PDIF transmit thread,
+and the data generator thread in parallel:
+
+.. literalinclude:: app_example_tx/src/main.xc
+  :start-after: //::main program
+  :end-before: //::
