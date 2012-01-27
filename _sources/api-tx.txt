@@ -26,6 +26,27 @@ Example
 =======
 
 
-An example program is shown below::
+An example program is shown below. An output port, a master-clock input port and a clock block must be
+declared:
 
-  TBC.
+.. literalinclude:: app_example_tx/src/main.xc
+  :start-after: //::declaration
+  :end-before: //::
+
+All data samples are being received on a streaming channel, after being
+parsed by the receive process. After reading a sample value from the
+channel, it must be converted to a signed sample value whilst removing the
+tag identifying the channel information. In this example, we perform this
+operation by masking off the bottom four bits and shifting the sample-data
+into the most significant 24-bits, ready to be used on, for example, I2S:
+
+.. literalinclude:: app_example_tx/src/main.xc
+  :start-after: //::data handling
+  :end-before: //::
+
+The main program in this example simply starts the S/PDIF transmit thread,
+and the data generator thread in parallel:
+
+.. literalinclude:: app_example_tx/src/main.xc
+  :start-after: //::main program
+  :end-before: //::

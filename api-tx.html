@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>S/PDIF Transmit &mdash; S/PDIF 1v0 documentation</title>
+    <title>S/PDIF Transmit &mdash; S/PDIF v1v0 documentation</title>
     <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
     <script type="text/javascript" src="_static/xcomment.js"></script>
-    <link rel="top" title="S/PDIF 1v0 documentation" href="index.html" />
+    <link rel="top" title="S/PDIF v1v0 documentation" href="index.html" />
     <link rel="prev" title="S/PDIF Receive" href="api-rx.html" /> 
 
 <script>
@@ -71,7 +71,22 @@ and a master clock coming in on a one-bit port.</p>
 <dl class="function">
 <dt id="SpdifTransmitPortConfig">
 void <tt class="descname">SpdifTransmitPortConfig</tt><big>(</big>out buffered port:32<em>&nbsp;p</em>, clock<em>&nbsp;cl</em>, in port<em>&nbsp;p_mclk</em><big>)</big><a class="headerlink" href="#SpdifTransmitPortConfig" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Configure out port to be clocked by clock block, driven from master clock input.</p>
+<p>Must be called before <a class="reference internal" href="#SpdifTransmit" title="SpdifTransmit"><span>SpdifTransmit()</span></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>p</strong> &#8211; S/PDIF tx port</li>
+<li><strong>cl</strong> &#8211; Clock block to be used</li>
+<li><strong>p_mclk</strong> &#8211; Master-clock input port</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="function">
 <dt id="SpdifTransmit">
@@ -80,18 +95,20 @@ void <tt class="descname">SpdifTransmit</tt><big>(</big>buffered out port:32<em>
 <p>All channel communication is done via builtins (e.g. outuint, outct etc.)</p>
 <p>On startup expects two words over the channel:</p>
 <ol class="arabic simple">
-<li>Desired sample frequency (in Hz) 2) Master clock frequency (in Hz)</li>
+<li>Desired sample frequency (in Hz)</li>
+<li>Master clock frequency (in Hz)</li>
 </ol>
 <p>Then sample pairs:</p>
 <ol class="arabic simple">
-<li>Left sample 2) Right sample</li>
+<li>Left sample</li>
+<li>Right sample</li>
 </ol>
 <p>If a XS1_CT_END token is received, the thread stops and waits for new sample/master freq pair</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>p</strong> &#8211; S/PDIF tx port</li>
 <li><strong>c</strong> &#8211; Channel-end for sample freq and samples</li>
 </ul>
@@ -104,8 +121,50 @@ void <tt class="descname">SpdifTransmit</tt><big>(</big>buffered out port:32<em>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<p>An example program is shown below:</p>
-<div class="highlight-none"><div class="highlight"><pre>TBC.
+<p>An example program is shown below. An output port, a master-clock input port and a clock block must be
+declared:</p>
+<div class="highlight-none"><div class="highlight"><pre>#include &lt;xs1.h&gt;
+#include &quot;SpdifTransmit.h&quot;
+
+#define SAMPLE_FREQUENCY_HZ 48000
+#define MASTER_CLOCK_FREQUENCY_HZ 24576000
+
+buffered out port:32 oneBitPort = XS1_PORT_1F;
+in port masterClockPort = XS1_PORT_1E;
+clock clockblock = XS1_CLKBLK_1;
+</pre></div>
+</div>
+<p>All data samples are being received on a streaming channel, after being
+parsed by the receive process. After reading a sample value from the
+channel, it must be converted to a signed sample value whilst removing the
+tag identifying the channel information. In this example, we perform this
+operation by masking off the bottom four bits and shifting the sample-data
+into the most significant 24-bits, ready to be used on, for example, I2S:</p>
+<div class="highlight-none"><div class="highlight"><pre>void transmitSpdif(chanend c)  {
+    SpdifTransmitPortConfig(oneBitPort, clockblock, masterClockPort);
+    SpdifTransmit(oneBitPort, c);
+}
+
+void generate(chanend c) {
+    outuint(c, SAMPLE_FREQUENCY_HZ);
+    outuint(c, MASTER_CLOCK_FREQUENCY_HZ);
+    for(int i = 0; i &lt; 10; i++) {
+        outuint(c, i);
+    }
+    outct(c, 1);
+}
+</pre></div>
+</div>
+<p>The main program in this example simply starts the S/PDIF transmit thread,
+and the data generator thread in parallel:</p>
+<div class="highlight-none"><div class="highlight"><pre>int main(void) {
+    chan c;
+    par {
+        transmitSpdif(c);
+        generate(c);
+    }
+    return 0;
+}
 </pre></div>
 </div>
 </div>

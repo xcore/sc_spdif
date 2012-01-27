@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>S/PDIF Receive &mdash; S/PDIF 1v0 documentation</title>
+    <title>S/PDIF Receive &mdash; S/PDIF v1v0 documentation</title>
     <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
     <script type="text/javascript" src="_static/xcomment.js"></script>
-    <link rel="top" title="S/PDIF 1v0 documentation" href="index.html" />
+    <link rel="top" title="S/PDIF v1v0 documentation" href="index.html" />
     <link rel="next" title="S/PDIF Transmit" href="api-tx.html" />
     <link rel="prev" title="SPDIF software" href="summary.html" /> 
 
@@ -71,19 +71,19 @@ channel information.</p>
 <dl class="macro">
 <dt id="FRAME_X">
 <tt class="descname">FRAME_X</tt><a class="headerlink" href="#FRAME_X" title="Permalink to this definition">¶</a></dt>
-<dd><p>This constant defines the four least-significant bits of the first sample of a frame (typically a sample from the left channel)</p>
+<dd><p>This constant defines the four least-significant bits of the first sample of a frame (typically a sample from the left channel).</p>
 </dd></dl>
 
 <dl class="macro">
 <dt id="FRAME_Y">
 <tt class="descname">FRAME_Y</tt><a class="headerlink" href="#FRAME_Y" title="Permalink to this definition">¶</a></dt>
-<dd><p>This constant defines the four least-significant bits of the second or later sample of a frame (typically a sample from the right channel, unless there are more than two channels)</p>
+<dd><p>This constant defines the four least-significant bits of the second or later sample of a frame (typically a sample from the right channel, unless there are more than two channels).</p>
 </dd></dl>
 
 <dl class="macro">
 <dt id="FRAME_Z">
 <tt class="descname">FRAME_Z</tt><a class="headerlink" href="#FRAME_Z" title="Permalink to this definition">¶</a></dt>
-<dd><p>This constant defines the four least-significant bits of the first sample of the first frame of a block (typically a sample from the left channel)</p>
+<dd><p>This constant defines the four least-significant bits of the first sample of the first frame of a block (typically a sample from the left channel).</p>
 </dd></dl>
 
 </div>
@@ -99,7 +99,7 @@ void <tt class="descname">SpdifReceive</tt><big>(</big>in buffered port:4<em>&nb
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>p</strong> &#8211; S/PDIF input port. This port must be 4-bit buffered, declared as <tt class="docutils literal"><span class="pre">in</span> <span class="pre">buffered</span> <span class="pre">port:4</span></tt></li>
 <li><strong>c</strong> &#8211; channel to output samples to</li>
 <li><strong>initial_divider</strong> &#8211; initial divide for initial estimate of sample rate For a 100Mhz reference clock, use an initial divider of 1 for 192000, 2 for 96000/88200, and 4 for 48000/44100.</li>
