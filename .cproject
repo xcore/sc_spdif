@@ -2,7 +2,7 @@
 <?fileVersion 4.0.0?>
 <cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
     <storageModule moduleId="org.eclipse.cdt.core.settings">
-                      <cconfiguration id="com.xmos.cdt.toolchain.84978889">
+        <cconfiguration id="com.xmos.cdt.toolchain.84978889">
             <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.xmos.cdt.toolchain.84978889" moduleId="org.eclipse.cdt.core.settings" name="Default">
                 <externalSettings />
                 <extensions>
@@ -14,128 +14,118 @@
             <storageModule moduleId="cdtBuildSystem" version="4.0.0">
                 <configuration buildProperties="" description="" id="com.xmos.cdt.toolchain.84978889" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
                     <folderInfo id="com.xmos.cdt.toolchain.84978889.1127281840" name="/" resourcePath="">
-                        <toolChain id = "com.xmos.cdt.toolchain.88213652" name="com.xmos.cdt.toolchain" superClass="com.xmos.cdt.toolchain">
-                            <targetPlatform archList="all" binaryParser="com.xmos.cdt.core.XEBinaryParser" id = "com.xmos.cdt.core.platform.10661646" isAbstract="false" osList="linux,win32,macosx" superClass="com.xmos.cdt.core.platform" />
-                            <builder arguments="" id = "com.xmos.cdt.builder.base.85486340" keepEnvironmentInBuildfile="false" managedBuildOn="false" superClass="com.xmos.cdt.builder.base" />
-                            <tool id = "com.xmos.cdt.xc.compiler.2973547" name="com.xmos.cdt.xc.compiler" superClass="com.xmos.cdt.xc.compiler">
-                                <option id = "com.xmos.c.compiler.option.include.paths.1164316" name="com.xmos.c.compiler.option.include.paths" superClass="com.xmos.c.compiler.option.include.paths" valueType="includePath">
+                        <toolChain id="com.xmos.cdt.toolchain.88213652" name="com.xmos.cdt.toolchain" superClass="com.xmos.cdt.toolchain">
+                            <targetPlatform archList="all" binaryParser="com.xmos.cdt.core.XEBinaryParser" id="com.xmos.cdt.core.platform.10661646" isAbstract="false" osList="linux,win32,macosx" superClass="com.xmos.cdt.core.platform" />
+                            <builder arguments="" id="com.xmos.cdt.builder.base.85486340" keepEnvironmentInBuildfile="false" managedBuildOn="false" superClass="com.xmos.cdt.builder.base" />
+                            <tool id="com.xmos.cdt.xc.compiler.2973547" name="com.xmos.cdt.xc.compiler" superClass="com.xmos.cdt.xc.compiler">
+                                <option id="com.xmos.c.compiler.option.include.paths.1164316" name="com.xmos.c.compiler.option.include.paths" superClass="com.xmos.c.compiler.option.include.paths" valueType="includePath">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_TOOL_PATH}/target/include&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_TOOL_PATH}/target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_TOOL_PATH}/target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
-
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
                                 </option>
-                                <inputType id = "com.xmos.cdt.xc.compiler.input.6761108" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
-                                <option id = "gnu.c.compiler.option.include.paths.91094587" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
+                                <inputType id="com.xmos.cdt.xc.compiler.input.6761108" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
+                                <option id="gnu.c.compiler.option.include.paths.91094587" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_TOOL_PATH}/target/include&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_TOOL_PATH}/target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_TOOL_PATH}/target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
-
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
                                 </option>
                             </tool>
-                            <tool id = "com.xmos.cdt.xc.compiler.base.53651905" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
-                                <option id = "gnu.c.compiler.option.include.paths.16837618" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
+                            <tool id="com.xmos.cdt.xc.compiler.base.53651905" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
+                                <option id="gnu.c.compiler.option.include.paths.16837618" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
-
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
                                 </option>
-                                <option id = "com.xmos.c.compiler.option.include.paths.79465446" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
+                                <option id="com.xmos.c.compiler.option.include.paths.79465446" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
-
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
                                 </option>
                             </tool>
-                            <tool id = "com.xmos.cdt.c.compiler.base.84963208" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
-                                <option id = "gnu.c.compiler.option.include.paths.41329110" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
+                            <tool id="com.xmos.cdt.c.compiler.base.84963208" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
+                                <option id="gnu.c.compiler.option.include.paths.41329110" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
-
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
                                 </option>
-                                <option id = "com.xmos.c.compiler.option.include.paths.14761441" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
+                                <option id="com.xmos.c.compiler.option.include.paths.14761441" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
-
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
                                 </option>
                             </tool>
-                            <tool id = "com.xmos.cdt.cpp.compiler.base.75498890" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
-                                <option id = "gnu.c.compiler.option.include.paths.77859156" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
+                            <tool id="com.xmos.cdt.cpp.compiler.base.75498890" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
+                                <option id="gnu.c.compiler.option.include.paths.77859156" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
-
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
                                 </option>
-                                <option id = "com.xmos.c.compiler.option.include.paths.71157448" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
+                                <option id="com.xmos.c.compiler.option.include.paths.71157448" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
-
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
                                 </option>
                             </tool>
-                            <tool id = "com.xmos.cdt.core.assembler.base.72832515" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
-                                <option id = "gnu.c.compiler.option.include.paths.12345455" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
+                            <tool id="com.xmos.cdt.core.assembler.base.72832515" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
+                                <option id="gnu.c.compiler.option.include.paths.12345455" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
-
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
                                 </option>
-                                <option id = "com.xmos.c.compiler.option.include.paths.20404826" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
+                                <option id="com.xmos.c.compiler.option.include.paths.20404826" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
-
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
                                 </option>
                             </tool>
                         </toolChain>
@@ -229,9 +219,8 @@
             <storageModule moduleId="org.eclipse.cdt.core.language.mapping" />
             <storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings" />
         </cconfiguration>
-
     </storageModule>
     <storageModule moduleId="cdtBuildSystem" version="4.0.0">
-        <project id = "sc_spdif.null.6037437" name="sc_spdif" />
+        <project id="sc_spdif.null.6037437" name="sc_spdif" />
     </storageModule>
 </cproject>
