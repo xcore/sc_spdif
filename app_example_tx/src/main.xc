@@ -27,7 +27,7 @@ void generate(chanend c) {
     for(int i = 0; i < 10; i++) {
         outuint(c, i);
     }
-    outct(c, 1);
+    outct(c, XS1_CT_END);
 }
 //::
 

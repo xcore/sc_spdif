@@ -1,25 +1,3 @@
-S/PDIF transmit
----------------
-
-Requires a clock-block and two ports: a one bit buffered output port (transfer width of 32)
-and a one bit unbuffered input port with the master clock. On the outside
-you will need a flip-flop to resynchronise the signal with the master
-clock.
-
-Call the configuration function to set up the clock.
-
-* ``SpdifTransmitPortConfig(onebitPort, clockblock, masterClockPort)``
-
-Then call the function that outputs data:
-
-* ``SpdifTransmit(oneBitPort, dataChannel)``
-
-The transmit function will in a loop expect on the channel
-* The sample frequency (in Hz as an int)
-* The master clock frequency (in Hz as an int)
-* Left and right sample values (each 32 bits, left aligned)
-* An END control token if either of the frequencies needs changing. 
-
 S/PDIF receive
 --------------
 
