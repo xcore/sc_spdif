@@ -37,7 +37,7 @@ In this example transmitSpdif sets up the clock and starts the transmit function
   :end-before: //::
 
 The main program in this example simply starts the S/PDIF transmit thread,
-and the data generator thread in parallel:
+and the data generator thread in parallel, connected by a channel:
 
 .. literalinclude:: app_example_tx/src/main.xc
   :start-after: //::main program

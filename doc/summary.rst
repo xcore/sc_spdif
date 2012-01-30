@@ -23,13 +23,13 @@ module_spdif_tx
 ---------------
 
 This module can transmit S/PDIF signals at the following rates
-(assuming XXX threads on a 400 MHz part):
+(assuming a 50 MIPS):
 
 +---------------------------+-----------------------+------------------------+
 | Functionality provided    | Resources required    | Status                 | 
 +----------+----------------+------------+----------+                        |
 | Channels | Sample Rate    | 1-bit port | Memory   |                        |
-+----------+----------------+------------+----------+------------------------+
++==========+================+============+==========+========================+
 | 2        | up to 192 KHz  | 1-2        | TBC      | Implemented and tested |
 +----------+----------------+------------+----------+------------------------+
 | 4        | up to 96 KHz   | 1-2        | TBC      | Implemented and tested |
@@ -58,7 +58,7 @@ or a power-of-2 multiple. For example, for 2 channels at 192 Khz the
 external clock has to run at a frequency of 24.576 MHz. This same frequency
 also supports 2 channels at 48 KHz (which requires a minimum frequency of
 6.144 MHz). If both 44,1 and 48 Khz frequencies are to be supported, both a
-24.587 MHz and a 22.579 MHz master clock is required. This is normally not
+24.576 MHz and a 22.579 MHz master clock is required. This is normally not
 an issue since the same clocks can be used to drive the audio codecs.
 
 Typical applications for this module include iPod docks, digital microphones,
@@ -81,7 +81,7 @@ generated code requires a one bit buffered input port (transfer width of
 | Functionality provided    | Resources required                 | Status                 | 
 +----------+----------------+------------+--------+--------------+                        |
 | Channels | Sample Rate    | 1-bit port | Memory | Thread rate  |                        |
-+----------+----------------+------------+--------+--------------+------------------------+
++==========+================+============+========+==============+========================+
 | 2        | up to 192 KHz  | 1          | 3 KB   | 80 MIPS      | Implemented and tested |
 +----------+----------------+------------+--------+--------------+------------------------+
 | 4        | up to 96 KHz   | 1          | 3 KB   | 40 MIPS      | Implemented and tested |

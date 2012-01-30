@@ -29,7 +29,7 @@
  *
  * This function needs 1 thread and no memory other
  * than ~2800 bytes of program code. It can do 11025, 12000, 22050, 24000,
- * 44100, 48000, 88200, 96000, and 192000 Khz.
+ * 44100, 48000, 88200, 96000, and 192000 Hz.
  * When the decoder
  * encounters a long series of zeros it will lower the divider; when it
  * encounters a short series of 0-1 transitions it will increase the divider.
