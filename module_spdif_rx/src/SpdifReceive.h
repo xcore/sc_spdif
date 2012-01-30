@@ -40,6 +40,9 @@
  * for bits should be removed whereupon the sample value should be sign
  * extended.
  *
+ * The function does not return unless compiled with TEST defined in which case it returns any
+ * time that it loses synchronisation.
+ *
  * \param p               S/PDIF input port. This port must be 4-bit buffered,
  *                        declared as ``in buffered port:4``
  *
