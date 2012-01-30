@@ -58,16 +58,13 @@ document.getElementById('d1').style.height=h2 + "px";
             
   <div class="section" id="s-pdif-transmit">
 <h1>S/PDIF Transmit<a class="headerlink" href="#s-pdif-transmit" title="Permalink to this headline">¶</a></h1>
-<p><em>This section is to be completed</em></p>
-<p>There are two modules that can produce an S/PDIF signal. The simplest
-module is a single thread that receives samples over a channel and that
-outputs data on the port, and the other module has a thread that receives
-samples over a channel and it produces the output on a channel. The latter
-is useful if the S/PDIF output port is on a different core.</p>
-<p>The S/PDIF transmit modules require a one-bit output port, a clock block,
-and a master clock coming in on a one-bit port.</p>
+<p>This module is a single thread that receives samples over a channel and that
+outputs data on the port.</p>
+<p>The S/PDIF transmit module require a one-bit buffered output port (with transfer width of 32), a clock block,
+and a master clock coming in on an unbuffered one-bit port.</p>
 <div class="section" id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<p>Call SpdifTransmitPortConfig to set up the clock then SpdifTransmit to output data.</p>
 <dl class="function">
 <dt id="SpdifTransmitPortConfig">
 void <tt class="descname">SpdifTransmitPortConfig</tt><big>(</big>out buffered port:32<em>&nbsp;p</em>, clock<em>&nbsp;cl</em>, in port<em>&nbsp;p_mclk</em><big>)</big><a class="headerlink" href="#SpdifTransmitPortConfig" title="Permalink to this definition">¶</a></dt>
@@ -123,6 +120,18 @@ void <tt class="descname">SpdifTransmit</tt><big>(</big>buffered out port:32<em>
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>An example program is shown below. An output port, a master-clock input port and a clock block must be
 declared:</p>
+<div class="highlight-none"><div class="highlight"><pre>#include &lt;xs1.h&gt;
+#include &quot;SpdifTransmit.h&quot;
+
+#define SAMPLE_FREQUENCY_HZ 48000
+#define MASTER_CLOCK_FREQUENCY_HZ 24576000
+
+buffered out port:32 oneBitPort = XS1_PORT_1F;
+in port masterClockPort = XS1_PORT_1E;
+clock clockblock = XS1_CLKBLK_1;
+</pre></div>
+</div>
+<p>In this example transmitSpdif sets up the clock and starts the transmit function to receive on a chanend. The generate function sends configuration settings over a channel then a series of data value and finally an END control token.</p>
 <div class="highlight-none"><div class="highlight"><pre>void transmitSpdif(chanend c)  {
     SpdifTransmitPortConfig(oneBitPort, clockblock, masterClockPort);
     SpdifTransmit(oneBitPort, c);
@@ -134,7 +143,7 @@ void generate(chanend c) {
     for(int i = 0; i &lt; 10; i++) {
         outuint(c, i);
     }
-    outct(c, 1);
+    outct(c, XS1_CT_END);
 }
 </pre></div>
 </div>

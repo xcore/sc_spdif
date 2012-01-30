@@ -1,20 +1,17 @@
 S/PDIF Transmit
 '''''''''''''''
 
-*This section is to be completed*
+This module is a single thread that receives samples over a channel and that
+outputs data on the port.
 
-There are two modules that can produce an S/PDIF signal. The simplest
-module is a single thread that receives samples over a channel and that
-outputs data on the port, and the other module has a thread that receives
-samples over a channel and it produces the output on a channel. The latter
-is useful if the S/PDIF output port is on a different core.
-
-The S/PDIF transmit modules require a one-bit output port, a clock block,
-and a master clock coming in on a one-bit port.
+The S/PDIF transmit module require a one-bit buffered output port (with transfer width of 32), a clock block,
+and a master clock coming in on an unbuffered one-bit port.
 
 
 API
 ===
+
+Call SpdifTransmitPortConfig to set up the clock then SpdifTransmit to output data.
 
 .. doxygenfunction:: SpdifTransmitPortConfig
 
@@ -33,7 +30,7 @@ declared:
   :start-after: //::declaration
   :end-before: //::
 
-  TBC.
+In this example transmitSpdif sets up the clock and starts the transmit function to receive on a chanend. The generate function sends configuration settings over a channel then a series of data value and finally an END control token.
 
 .. literalinclude:: app_example_tx/src/main.xc
   :start-after: //::data handling

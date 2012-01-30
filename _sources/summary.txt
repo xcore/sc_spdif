@@ -73,6 +73,10 @@ automatically adjusts to the incoming rate, but for high rates a fast
 thread is required. The thread will fail silently if it does not have
 enough MIPS to parse the input stream.
 
+The S/PDIF receiver is generated from a state machine description. The
+generated code requires a one bit buffered input port (transfer width of
+4), and a clock block to work.
+
 +---------------------------+------------------------------------+------------------------+
 | Functionality provided    | Resources required                 | Status                 | 
 +----------+----------------+------------+--------+--------------+                        |
