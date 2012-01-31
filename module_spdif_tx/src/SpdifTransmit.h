@@ -25,6 +25,7 @@
  *
  * 2) Right sample
  *
+ * The data format is 24-bit signed left aligned in a 32-bit word.
  *
  * If a XS1_CT_END token is received, the thread stops and waits for new sample/master freq pair
  *
