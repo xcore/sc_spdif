@@ -37,7 +37,7 @@
  * Output: the received 24-bit sample values are output as a word on the
  * streaming channel end. Each value is shifted up by 4-bits with the
  * bottom four bits being one of FRAME_X, FRAME_Y, or FRAME_Z. The bottom
- * for bits should be removed whereupon the sample value should be sign
+ * four bits should be removed whereupon the sample value should be sign
  * extended.
  *
  * The function does not return unless compiled with TEST defined in which case it returns any

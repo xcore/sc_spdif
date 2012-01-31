@@ -23,7 +23,7 @@ module_spdif_tx
 ---------------
 
 This module can transmit S/PDIF signals at the following rates
-(assuming a 50 MIPS):
+(assuming a 50 MIPS thread):
 
 +---------------------------+-----------------------+------------------------+
 | Functionality provided    | Resources required    | Status                 | 
