@@ -78,7 +78,7 @@ only S/PDIF input. Others require both.</li>
 <div class="section" id="module-spdif-tx">
 <h2>module_spdif_tx<a class="headerlink" href="#module-spdif-tx" title="Permalink to this headline">¶</a></h2>
 <p>This module can transmit S/PDIF signals at the following rates
-(assuming XXX threads on a 400 MHz part):</p>
+(assuming a 50 MIPS thread):</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="14%" />
@@ -87,32 +87,22 @@ only S/PDIF input. Others require both.</li>
 <col width="14%" />
 <col width="33%" />
 </colgroup>
+<thead valign="bottom">
+<tr><th class="head" colspan="2">Functionality provided</th>
+<th class="head" colspan="2">Resources required</th>
+<th class="head" rowspan="2">Status</th>
+</tr>
+<tr><th class="head">Channels</th>
+<th class="head">Sample Rate</th>
+<th class="head">1-bit port</th>
+<th class="head">Memory</th>
+</tr>
+</thead>
 <tbody valign="top">
-<tr><td colspan="2">Functionality provided</td>
-<td colspan="2">Resources required</td>
-<td rowspan="2">Status</td>
-</tr>
-<tr><td>Channels</td>
-<td>Sample Rate</td>
-<td>1-bit port</td>
-<td>Memory</td>
-</tr>
 <tr><td>2</td>
 <td>up to 192 KHz</td>
 <td>1-2</td>
-<td>TBC</td>
-<td>Implemented and tested</td>
-</tr>
-<tr><td>4</td>
-<td>up to 96 KHz</td>
-<td>1-2</td>
-<td>TBC</td>
-<td>Implemented and tested</td>
-</tr>
-<tr><td>8</td>
-<td>up to 48 KHz</td>
-<td>1-2</td>
-<td>TBC</td>
+<td>3.5 KB</td>
 <td>Implemented and tested</td>
 </tr>
 </tbody>
@@ -136,7 +126,7 @@ frequency of:</p>
 external clock has to run at a frequency of 24.576 MHz. This same frequency
 also supports 2 channels at 48 KHz (which requires a minimum frequency of
 6.144 MHz). If both 44,1 and 48 Khz frequencies are to be supported, both a
-24.587 MHz and a 22.579 MHz master clock is required. This is normally not
+24.576 MHz and a 22.579 MHz master clock is required. This is normally not
 an issue since the same clocks can be used to drive the audio codecs.</p>
 <p>Typical applications for this module include iPod docks, digital microphones,
 digital mixing desks, USB audio, and AVB.</p>
@@ -159,36 +149,24 @@ generated code requires a one bit buffered input port (transfer width of
 <col width="17%" />
 <col width="29%" />
 </colgroup>
+<thead valign="bottom">
+<tr><th class="head" colspan="2">Functionality provided</th>
+<th class="head" colspan="3">Resources required</th>
+<th class="head" rowspan="2">Status</th>
+</tr>
+<tr><th class="head">Channels</th>
+<th class="head">Sample Rate</th>
+<th class="head">1-bit port</th>
+<th class="head">Memory</th>
+<th class="head">Thread rate</th>
+</tr>
+</thead>
 <tbody valign="top">
-<tr><td colspan="2">Functionality provided</td>
-<td colspan="3">Resources required</td>
-<td rowspan="2">Status</td>
-</tr>
-<tr><td>Channels</td>
-<td>Sample Rate</td>
-<td>1-bit port</td>
-<td>Memory</td>
-<td>Thread rate</td>
-</tr>
 <tr><td>2</td>
 <td>up to 192 KHz</td>
 <td>1</td>
 <td>3 KB</td>
 <td>80 MIPS</td>
-<td>Implemented and tested</td>
-</tr>
-<tr><td>4</td>
-<td>up to 96 KHz</td>
-<td>1</td>
-<td>3 KB</td>
-<td>40 MIPS</td>
-<td>Implemented and tested</td>
-</tr>
-<tr><td>8</td>
-<td>up to 48 KHz</td>
-<td>1</td>
-<td>3 KB</td>
-<td>20 MIPS</td>
 <td>Implemented and tested</td>
 </tr>
 </tbody>

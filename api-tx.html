@@ -148,7 +148,7 @@ void generate(chanend c) {
 </pre></div>
 </div>
 <p>The main program in this example simply starts the S/PDIF transmit thread,
-and the data generator thread in parallel:</p>
+and the data generator thread in parallel, connected by a channel:</p>
 <div class="highlight-none"><div class="highlight"><pre>int main(void) {
     chan c;
     par {
