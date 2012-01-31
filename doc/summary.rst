@@ -30,11 +30,7 @@ This module can transmit S/PDIF signals at the following rates
 +----------+----------------+------------+----------+                        |
 | Channels | Sample Rate    | 1-bit port | Memory   |                        |
 +==========+================+============+==========+========================+
-| 2        | up to 192 KHz  | 1-2        | TBC      | Implemented and tested |
-+----------+----------------+------------+----------+------------------------+
-| 4        | up to 96 KHz   | 1-2        | TBC      | Implemented and tested |
-+----------+----------------+------------+----------+------------------------+
-| 8        | up to 48 KHz   | 1-2        | TBC      | Implemented and tested |
+| 2        | up to 192 KHz  | 1-2        | 3.5 KB   | Implemented and tested |
 +----------+----------------+------------+----------+------------------------+
 
 It requires a single thread to run the transmit code. The number of 1-bit
@@ -83,10 +79,6 @@ generated code requires a one bit buffered input port (transfer width of
 | Channels | Sample Rate    | 1-bit port | Memory | Thread rate  |                        |
 +==========+================+============+========+==============+========================+
 | 2        | up to 192 KHz  | 1          | 3 KB   | 80 MIPS      | Implemented and tested |
-+----------+----------------+------------+--------+--------------+------------------------+
-| 4        | up to 96 KHz   | 1          | 3 KB   | 40 MIPS      | Implemented and tested |
-+----------+----------------+------------+--------+--------------+------------------------+
-| 8        | up to 48 KHz   | 1          | 3 KB   | 20 MIPS      | Implemented and tested |
 +----------+----------------+------------+--------+--------------+------------------------+
 
 The receiver does not require any external clock, but can only recover
