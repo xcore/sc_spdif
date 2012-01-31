@@ -30,10 +30,16 @@ declared:
   :start-after: //::declaration
   :end-before: //::
 
-In this example transmitSpdif sets up the clock and starts the transmit function to receive on a chanend. The generate function sends configuration settings over a channel then a series of data value and finally an END control token.
+In this example transmitSpdif sets up the clock and starts the transmit function to receive on a chanend.
 
 .. literalinclude:: app_example_tx/src/main.xc
-  :start-after: //::data handling
+  :start-after: //::spdif thread
+  :end-before: //::
+
+The generate function sends configuration settings over a channel then a triangle wave.
+
+.. literalinclude:: app_example_tx/src/main.xc
+  :start-after: //::data generation
   :end-before: //::
 
 The main program in this example simply starts the S/PDIF transmit thread,
