@@ -8,8 +8,7 @@ rate.
 
 Important characteristics of S/PDIF software are the following:
 
-* The number of audio channels. Typical values are 2 (stereo), or 6 (5.1
-  surround). 
+* The number of audio channels: 2 (Stereo) 
 
 * The sample rate(s) supported. Typical values are 44.1, 48, 96, and 192
   Khz. Some systems require only a single frequency to be supported, others
