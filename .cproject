@@ -27,6 +27,8 @@
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master}&quot;' />
                                 </option>
                                 <inputType id="com.xmos.cdt.xc.compiler.input.6761108" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
                                 <option id="gnu.c.compiler.option.include.paths.91094587" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
@@ -38,6 +40,8 @@
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master}&quot;' />
                                 </option>
                             </tool>
                             <tool id="com.xmos.cdt.xc.compiler.base.53651905" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
@@ -50,6 +54,8 @@
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master}&quot;' />
                                 </option>
                                 <option id="com.xmos.c.compiler.option.include.paths.79465446" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include&quot;' />
@@ -60,6 +66,8 @@
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master}&quot;' />
                                 </option>
                             </tool>
                             <tool id="com.xmos.cdt.c.compiler.base.84963208" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
@@ -72,6 +80,8 @@
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master}&quot;' />
                                 </option>
                                 <option id="com.xmos.c.compiler.option.include.paths.14761441" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include&quot;' />
@@ -82,6 +92,8 @@
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master}&quot;' />
                                 </option>
                             </tool>
                             <tool id="com.xmos.cdt.cpp.compiler.base.75498890" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
@@ -94,6 +106,8 @@
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master}&quot;' />
                                 </option>
                                 <option id="com.xmos.c.compiler.option.include.paths.71157448" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include&quot;' />
@@ -104,6 +118,8 @@
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master}&quot;' />
                                 </option>
                             </tool>
                             <tool id="com.xmos.cdt.core.assembler.base.72832515" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
@@ -116,6 +132,8 @@
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master}&quot;' />
                                 </option>
                                 <option id="com.xmos.c.compiler.option.include.paths.20404826" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include&quot;' />
@@ -126,6 +144,8 @@
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_rx}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx/src}&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_spdif/module_spdif_tx}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/sc_i2c/module_i2c_master}&quot;' />
                                 </option>
                             </tool>
                         </toolChain>

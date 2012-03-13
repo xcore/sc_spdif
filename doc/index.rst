@@ -1,5 +1,5 @@
-Documentation
--------------
+S/PDIF Software Component
+-------------------------
 
 .. toctree::
 
