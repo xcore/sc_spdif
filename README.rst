@@ -1,12 +1,9 @@
 S/PDIF 
 ...........
 
-:Latest release: 1.3.0rc0
+:Latest release: 1.3.0rc1
 :Maintainer: henkmuller
 :Description: S/PDIF Component
-
-
-
 
 
 The two modules in this library are used to transmit and receive
