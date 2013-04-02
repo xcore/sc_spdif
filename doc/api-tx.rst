@@ -10,7 +10,11 @@ samples over a channel and it produces the output on a channel. The latter
 is useful if the S/PDIF output port is on a different core.
 
 The S/PDIF transmit modules require a one-bit output port, a clock block,
-and a master clock coming in on a one-bit port.
+and a master clock coming in on a one-bit port. Externally, a flip-flop
+should resynchronise the edges of the signal for any signal above 48 KHz.
+In order to set-up the ports, the master clock should be delayed in order
+for the external signal and the internal update to not coincide. The
+function ``SpdifTransmitPortConfig`` is provided for this purpose.
 
 
 API
@@ -19,8 +23,6 @@ API
 .. doxygenfunction:: SpdifTransmitPortConfig
 
 .. doxygenfunction:: SpdifTransmit
-
-
 
 Example
 =======

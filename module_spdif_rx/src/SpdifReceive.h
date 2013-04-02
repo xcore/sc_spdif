@@ -3,6 +3,8 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
+/*! \file */
+
 #ifndef _SpdifReceive_h_
 #define _SpdifReceive_h_
 #include <xs1.h>
@@ -25,7 +27,7 @@
 #define FRAME_Z 3
 
 
-/** S/PDIF receive function. 
+/** \brief S/PDIF receive function. 
  *
  * This function needs 1 thread and no memory other
  * than ~2800 bytes of program code. It can do 11025, 12000, 22050, 24000,

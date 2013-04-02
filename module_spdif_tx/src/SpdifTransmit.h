@@ -3,6 +3,7 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
+/** @file */
 
 #ifndef _SPDIF_TRANSMIT_
 #define _SPDIF_TRANSMIT_
