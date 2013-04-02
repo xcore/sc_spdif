@@ -2,11 +2,11 @@ S/PDIF Receive
 ''''''''''''''
 
 The S/PDIF receive module comprises a single thread that parses data as it
-arrives on a one-bit port and that outputs words of data onto a streaming
+arrives on a one-bit port and outputs words of data onto a streaming
 channel end. Each word of data carries 24 bits of data and 4 bits of
 channel information.
 
-This modules requires the reference clock to be exactly 100 Mhz.
+This module requires the reference clock to be exactly 100 MHz.
 
 
 Symbolic constants

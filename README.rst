@@ -1,13 +1,9 @@
 S/PDIF 
 ...........
 
-:Stable release:   unreleased
-
-:Status:  Feature complete
-
-:Description: Transmit and Receive S/PDIF streams.
-
-:Maintainer:  https://github.com/henkmuller
+:Latest release: 1.3.0rc2
+:Maintainer: henkmuller
+:Description: S/PDIF Component
 
 
 The two modules in this library are used to transmit and receive
@@ -26,17 +22,24 @@ Firmware Overview
 
 RX and TX are defined as functions which each run forever.
 
+Documentation
+=============
+
+Full documentation can be found at: http://xcore.github.com/sc_spdif/
+
 Known Issues
 ============
 
 none
 
-Required Repositories
-================
-
-* xcommon git\@github.com:xmos/xcommon.git
-
 Support
 =======
 
 Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the maintainer for this line.
+
+Required software (dependencies)
+================================
+
+  * xcommon (if using development tools earlier than 11.11.0)
+  * sc_i2c (ssh://git@github.com/xcore/sc_i2c)
+

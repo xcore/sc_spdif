@@ -31,7 +31,7 @@
  *
  * This function needs 1 thread and no memory other
  * than ~2800 bytes of program code. It can do 11025, 12000, 22050, 24000,
- * 44100, 48000, 88200, 96000, and 192000 Khz.
+ * 44100, 48000, 88200, 96000, and 192000 Hz.
  * When the decoder
  * encounters a long series of zeros it will lower the divider; when it
  * encounters a short series of 0-1 transitions it will increase the divider.
@@ -39,8 +39,11 @@
  * Output: the received 24-bit sample values are output as a word on the
  * streaming channel end. Each value is shifted up by 4-bits with the
  * bottom four bits being one of FRAME_X, FRAME_Y, or FRAME_Z. The bottom
- * for bits should be removed whereupon the sample value should be sign
+ * four bits should be removed whereupon the sample value should be sign
  * extended.
+ *
+ * The function does not return unless compiled with TEST defined in which case it returns any
+ * time that it loses synchronisation.
  *
  * \param p               S/PDIF input port. This port must be 4-bit buffered,
  *                        declared as ``in buffered port:4``

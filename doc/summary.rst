@@ -8,8 +8,7 @@ rate.
 
 Important characteristics of S/PDIF software are the following:
 
-* The number of audio channels. Typical values are 2 (stereo), or 6 (5.1
-  surround). 
+* The number of audio channels: 2 (Stereo) 
 
 * The sample rate(s) supported. Typical values are 44.1, 48, 96, and 192
   Khz. Some systems require only a single frequency to be supported, others
@@ -23,18 +22,14 @@ module_spdif_tx
 ---------------
 
 This module can transmit S/PDIF signals at the following rates
-(assuming XXX threads on a 400 MHz part):
+(assuming a 50 MIPS thread):
 
 +---------------------------+-----------------------+------------------------+
 | Functionality provided    | Resources required    | Status                 | 
 +----------+----------------+------------+----------+                        |
 | Channels | Sample Rate    | 1-bit port | Memory   |                        |
-+----------+----------------+------------+----------+------------------------+
-| 2        | up to 192 KHz  | 1-2        | TBC      | Implemented and tested |
-+----------+----------------+------------+----------+------------------------+
-| 4        | up to 96 KHz   | 1-2        | TBC      | Implemented and tested |
-+----------+----------------+------------+----------+------------------------+
-| 8        | up to 48 KHz   | 1-2        | TBC      | Implemented and tested |
++==========+================+============+==========+========================+
+| 2        | up to 192 KHz  | 1-2        | 3.5 KB   | Implemented and tested |
 +----------+----------------+------------+----------+------------------------+
 
 It requires a single thread to run the transmit code. The number of 1-bit
@@ -58,7 +53,7 @@ or a power-of-2 multiple. For example, for 2 channels at 192 Khz the
 external clock has to run at a frequency of 24.576 MHz. This same frequency
 also supports 2 channels at 48 KHz (which requires a minimum frequency of
 6.144 MHz). If both 44,1 and 48 Khz frequencies are to be supported, both a
-24.587 MHz and a 22.579 MHz master clock is required. This is normally not
+24.576 MHz and a 22.579 MHz master clock is required. This is normally not
 an issue since the same clocks can be used to drive the audio codecs.
 
 Typical applications for this module include iPod docks, digital microphones,
@@ -73,16 +68,16 @@ automatically adjusts to the incoming rate, but for high rates a fast
 thread is required. The thread will fail silently if it does not have
 enough MIPS to parse the input stream.
 
+The S/PDIF receiver is generated from a state machine description. The
+generated code requires a one bit buffered input port (transfer width of
+4), and a clock block to work.
+
 +---------------------------+------------------------------------+------------------------+
 | Functionality provided    | Resources required                 | Status                 | 
 +----------+----------------+------------+--------+--------------+                        |
 | Channels | Sample Rate    | 1-bit port | Memory | Thread rate  |                        |
-+----------+----------------+------------+--------+--------------+------------------------+
++==========+================+============+========+==============+========================+
 | 2        | up to 192 KHz  | 1          | 3 KB   | 80 MIPS      | Implemented and tested |
-+----------+----------------+------------+--------+--------------+------------------------+
-| 4        | up to 96 KHz   | 1          | 3 KB   | 40 MIPS      | Implemented and tested |
-+----------+----------------+------------+--------+--------------+------------------------+
-| 8        | up to 48 KHz   | 1          | 3 KB   | 20 MIPS      | Implemented and tested |
 +----------+----------------+------------+--------+--------------+------------------------+
 
 The receiver does not require any external clock, but can only recover

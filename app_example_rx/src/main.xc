@@ -24,6 +24,7 @@ void handleSamples(streaming chanend c) {
         }
     }
 }
+//::
 
 //::main program
 int main(void) {
