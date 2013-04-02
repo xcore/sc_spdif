@@ -1,0 +1,10 @@
+app_example_rx/.build/
+app_example_rx/bin/
+app_example_tx/.build/
+app_example_tx/bin/
+doc/.doxygen/
+doc/.linked_dirs/
+doc/.sources/
+doc/Doxyfile-e
+doc/_build/
+doc/index.pdf
