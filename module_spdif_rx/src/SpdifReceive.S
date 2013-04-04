@@ -166,9 +166,12 @@ startParsing:
   LDC r9, 0x2
   LDC r10, 0x4
   LDC r11, 0x0
+  BRFU startIt
 #ifndef TEST
 parseSpDifE:
+  LDC r5, 0x68
 #endif
+startIt:    
   IN   r4, r0
   IN   r4, r0
   SHLI r4, r4, 1
