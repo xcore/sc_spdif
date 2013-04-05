@@ -146,9 +146,10 @@ BSLOWER:
 #ifndef TEST
   GETD r4, r3
   SHLI  r4, r4, 1
-  LDC r6, 32
+  LDC  r6, 8
   LSU  r10, r4, r6
-  BRFF r10, startParsing
+  BRFT r10, setClock
+  LDC  r4, 1
 setClock:
   SETCI r3, 7
   SETD r3, r4
