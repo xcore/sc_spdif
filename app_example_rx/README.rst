@@ -1,9 +1,10 @@
-<Add title here>
-================
+app_example_rx
+==============
 
-:scope: <Put one of Roadmap, Example, Early Development or General Use>
-:description: <Add one line here>
-:keywords: <Add comma separated list of keywords>
-:boards: <Add comma separated list of supported boards>
+:scope: General Use
+:description: app_example_rx
+:keywords: spdif input 
+:boards: 
 
-<Add description of software block>
+S/PDIF Rx demo
+

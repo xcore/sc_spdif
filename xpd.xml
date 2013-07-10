@@ -2,9 +2,8 @@
 <xpd>
     <components></components>
     <dependency repo = "sc_i2c">
-        <githash>86cb497a5ee519fbc0c4bb597adeeb135d3e97e1</githash>
+        <githash>d266213a4d5c4956f3d5980ba42611e24d129a39</githash>
         <uri>ssh://git@github.com/xcore/sc_i2c</uri>
-        <version>2.0.0rc3</version>
     </dependency>
     <description>S/PDIF Component</description>
     <docdir>doc</docdir>
@@ -20,6 +19,7 @@
     <release parenthash = "c71c7aeacf6f31037608b530a85e51ed49459f20" version = "1.3.0rc2" githash = "04eca3570488bf062d1aa9db2e1175cc08a6142f"></release>
     <subpartnumber>XM-000050-SW</subpartnumber>
     <vendor>XMOS</vendor>
+    <xcore_repo>sc_spdif</xcore_repo>
     <xpd_version>1.0</xpd_version>
     <scope>example</scope>
 </xpd>
