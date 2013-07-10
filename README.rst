@@ -1,7 +1,7 @@
 S/PDIF 
 ...........
 
-:Latest release: 1.3.0rc2
+:Latest release: 1.3.0rc3
 :Maintainer: henkmuller
 :Description: S/PDIF Component
 
@@ -40,6 +40,5 @@ Issues may be submitted via the Issues tab in this github repo. Response to any 
 Required software (dependencies)
 ================================
 
-  * xcommon (if using development tools earlier than 11.11.0)
   * sc_i2c (ssh://git@github.com/xcore/sc_i2c)
 
