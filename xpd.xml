@@ -1,6 +1,14 @@
 <?xml version="1.0" ?>
 <xpd>
-    <components></components>
+    <components>
+        <component description = "app_example_rx" type = "demoCode" scope = "General Use" path = "app_example_rx" local = "false" id = "app_example_rx" name = "app_example_rx">
+            <board></board>
+            <componentDependency>module_spdif_rx</componentDependency>
+            <keyword>spdif input</keyword>
+        </component>
+        <component description = "S/PDIF transmit module" type = "demoCode" scope = "General Use" path = "module_spdif_rx" local = "false" id = "module_spdif_rx" name = "module_spdif_tx"></component>
+        <component description = "S/PDIF receive module" type = "demoCode" scope = "General Use" path = "module_spdif_tx" local = "false" id = "module_spdif_tx" name = "module_spdif_rx"></component>
+    </components>
     <dependency repo = "sc_i2c">
         <githash>d266213a4d5c4956f3d5980ba42611e24d129a39</githash>
         <uri>ssh://git@github.com/xcore/sc_i2c</uri>
