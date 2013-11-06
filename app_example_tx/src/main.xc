@@ -35,22 +35,22 @@ void generate(chanend c) {
     outuint(c, SAMPLE_FREQUENCY_HZ);
     outuint(c, MASTER_CLOCK_FREQUENCY_HZ);
     while(1) {
-       // Generate a triangle wave
-       int sample = i;
-       if (i > (WAVE_LEN / 4)) {
-          // After the first quarter of the cycle
-          sample = (WAVE_LEN / 2) - i;
-       }
-       if (i > (3 * WAVE_LEN / 4)) {
-          // In the last quarter of the cycle
-          sample = i - WAVE_LEN;
-       }
-       sample <<= 23; // Shift to highest but 1 bits
-       outuint(c, sample); // Left channel
-       outuint(c, sample); // Right channel
+        // Generate a triangle wave
+        int sample = i;
+        if (i > (WAVE_LEN / 4)) {
+            // After the first quarter of the cycle
+            sample = (WAVE_LEN / 2) - i;
+        }
+        if (i > (3 * WAVE_LEN / 4)) {
+            // In the last quarter of the cycle
+            sample = i - WAVE_LEN;
+        }
+        sample <<= 23; // Shift to highest but 1 bits
+        outuint(c, sample); // Left channel
+        outuint(c, sample); // Right channel
 
-       i++;
-       i %= WAVE_LEN;
+        i++;
+        i %= WAVE_LEN;
     }
     //outct(c, XS1_CT_END); // to stop SpdifTransmit thread
 }
@@ -58,18 +58,18 @@ void generate(chanend c) {
 
 //::main program
 void example(void) {
-   chan c;
-   p_gpio <: SPDIF_ENABLE;
-   par {
-      transmitSpdif(c);
-      generate(c);
-   }
+    chan c;
+    p_gpio <: SPDIF_ENABLE;
+    par {
+        transmitSpdif(c);
+        generate(c);
+    }
 }
 
 int main(void) {
-   par {
-      on stdcore[1]: example();
-   }
-   return 0;
+    par {
+        on stdcore[1]: example();
+    }
+    return 0;
 }
 //::

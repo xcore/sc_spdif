@@ -16,7 +16,7 @@
 #include <xclib.h>
 #include <print.h>
 
-#define	VALIDITY 		0x00000000		/* Validity bit (x<<28) */
+#define    VALIDITY         0x00000000        /* Validity bit (x<<28) */
 
 void SpdifTransmitPortConfig(out buffered port:32 p, clock clk, in port p_mclk)
 {
@@ -378,7 +378,10 @@ unsigned preambleWords_4[6] = {
 
 
 /* E.g. 24MHz -> 192kHz */
-void SpdifTransmit_1(out buffered port:32 p, chanend c_tx0, const int ctrl_left[2], const int ctrl_right[2])
+void SpdifTransmit_1(out buffered port:32 p,
+                    chanend c_tx0,
+                    const int ctrl_left[2],
+                    const int ctrl_right[2])
 {
     unsigned word;
     unsigned xor = 0;
@@ -388,11 +391,11 @@ void SpdifTransmit_1(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
   
     /* Check for new frequency */
     if (testct(c_tx0)) 
-    {    
+    {
         chkct(c_tx0, XS1_CT_END);
         return;
     }
-  
+
     /* Get L/R samples */
     sample = inuint(c_tx0) >> 4 & 0x0FFFFFF0 ;
     sample2 = inuint(c_tx0);
@@ -417,42 +420,66 @@ void SpdifTransmit_1(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
             encoded_preamble = preableWords_1[word & 0xF];
             encoded_preamble ^= xor;
             partout(p, 8, encoded_preamble);
-            xor = __builtin_sext(encoded_preamble, 8) >> 8;     /* xor = 0xFFFFFFFF * ((encoded_preamble & 0x8000) == 0x8000); */
-                                                                /* Replace with sext(encoded_word,1) */
+
+            /* xor = 0xFFFFFFFF * ((encoded_preamble & 0x8000) == 0x8000); */
+            /* Replace with sext(encoded_word,1) */
+            xor = __builtin_sext(encoded_preamble, 8) >> 8;
+
             word = word >> 4;
 
             /* Lookup remaining 28 bits, 8/4 bits at a time */
             encoded_word = dataWords_1[word & 0xFF];
-            encoded_word ^= xor;                                /* Xor to invert data if lsab of last data was a 1 */
+
+            /* Xor to invert data if lsab of last data was a 1 */
+            encoded_word ^= xor;
             partout(p, 16, encoded_word);
-            xor = __builtin_sext(encoded_word, 16) >> 16;       /* xor = 0xFFFFFFFF * (encoded_word < 0);  */
-                                                                /* Replace with sext(encoded_word,1) */
+
+            /* xor = 0xFFFFFFFF * (encoded_word < 0);  */
+            /* Replace with sext(encoded_word,1) */
+            xor = __builtin_sext(encoded_word, 16) >> 16;
+
             word = word >> 8;
 
             newblock = 0;
             controlLeft >>=1;
 
             encoded_word = dataWords_1[word & 0xFF];
-            encoded_word ^= xor;                                /* Xor to invert data if lsab of last data was a 1 */
+
+            /* Xor to invert data if lsab of last data was a 1 */
+            encoded_word ^= xor;
             partout(p, 16, encoded_word);
-            xor = __builtin_sext(encoded_word, 16) >> 16;       /* xor = 0xFFFFFFFF * (encoded_word < 0);  */
-                                                                /* Replace with sext(encoded_word,1) */
+
+           /* xor = 0xFFFFFFFF * (encoded_word < 0);  */
+           /* Replace with sext(encoded_word,1) */
+            xor = __builtin_sext(encoded_word, 16) >> 16;
+
             word = word >> 8;
 
             encoded_word = dataWords_1_Nibble[word & 0xF];
-            encoded_word ^= xor;                                /* Xor to invert data if lsab of last data was a 1 */
+
+            /* Xor to invert data if lsab of last data was a 1 */
+            encoded_word ^= xor;
             partout(p, 8, encoded_word);
-            xor = __builtin_sext(encoded_word, 8) >> 8;         /* xor = 0xFFFFFFFF * ((encoded_word & 0x8000) != 0);  */
-                                                                /* Replace with sext(encoded_word,1) */
+
+            /* xor = 0xFFFFFFFF * ((encoded_word & 0x8000) != 0);*/
+            /* Replace with sext(encoded_word,1) */
+            xor = __builtin_sext(encoded_word, 8) >> 8;
+
             word = word >> 4;
 
             sample = sample2 >> 4 & 0x0FFFFFF0 ;
           
             encoded_word = dataWords_1[word & 0xFF];
-            encoded_word ^= xor;                                /* Xor to invert data if lsab of last data was a 1 */
+
+            /* Xor to invert data if lsab of last data was a 1 */
+            encoded_word ^= xor;
             partout(p, 16, encoded_word);
-            xor = __builtin_sext(encoded_word, 16) >> 16;       /* xor = 0xFFFFFFFF * (encoded_word < 0);  */
-                                                                /* Replace with sext(encoded_word,1) */
+
+
+            /* xor = 0xFFFFFFFF * (encoded_word < 0);  */
+            /* Replace with sext(encoded_word,1) */
+            xor = __builtin_sext(encoded_word, 16) >> 16;
+
 
             /* Right sample */
           
@@ -466,32 +493,50 @@ void SpdifTransmit_1(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
             encoded_preamble = preableWords_1[word & 0xF];
             encoded_preamble ^= xor;
             partout(p, 8, encoded_preamble);
-            xor = __builtin_sext(encoded_preamble, 8) >> 8;     /* xor = 0xFFFFFFFF * ((encoded_preamble & 0x8000) == 0x8000);  */
-                                                                /* Replace with sext(encoded_word,1) */
+
+            /* xor = 0xFFFFFFFF * ((encoded_preamble & 0x8000) == 0x8000);  */
+            /* Replace with sext(encoded_word,1) */
+            xor = __builtin_sext(encoded_preamble, 8) >> 8;
+
             word = word >> 4;
 
             /* Lookup remaining 28 bits, 8/4 bits at a time */
             encoded_word = dataWords_1[word & 0xFF];
-            encoded_word ^= xor;                                /* Xor to invert data if lsab of last data was a 1 */
+
+            /* Xor to invert data if lsab of last data was a 1 */
+            encoded_word ^= xor;
             partout(p, 16, encoded_word);
-            xor = __builtin_sext(encoded_word, 16) >> 16;       /* xor = 0xFFFFFFFF * (encoded_word < 0);  */
-                                                                /* Replace with sext(encoded_word,1) */
+
+            /* xor = 0xFFFFFFFF * (encoded_word < 0);  */
+            /* Replace with sext(encoded_word,1) */
+            xor = __builtin_sext(encoded_word, 16) >> 16;
+
             word = word >> 8;
 
             encoded_word = dataWords_1[word & 0xFF];
-            encoded_word ^= xor;                                /* Xor to invert data if lsab of last data was a 1 */
+
+            /* Xor to invert data if lsab of last data was a 1 */
+            encoded_word ^= xor;
             partout(p, 16, encoded_word);
-            xor = __builtin_sext(encoded_word, 16) >> 16;       /* xor = 0xFFFFFFFF * (encoded_word < 0); */ 
-                                                                /* Replace with sext(encoded_word,1) */
+
+            /* xor = 0xFFFFFFFF * (encoded_word < 0); */
+            /* Replace with sext(encoded_word,1) */
+            xor = __builtin_sext(encoded_word, 16) >> 16;
+
             word = word >> 8;
 
             controlRight >>=1;
           
             encoded_word = dataWords_1_Nibble[word & 0xF];
-            encoded_word ^= xor;                                /* Xor to invert data if lsab of last data was a 1 */
+
+            /* Xor to invert data if lsab of last data was a 1 */
+            encoded_word ^= xor;
             partout(p, 8, encoded_word);
-            xor = __builtin_sext(encoded_word, 8) >> 8;         /* xor = 0xFFFFFFFF * ((encoded_word & 0x8000) != 0); */ 
-                                                                /* Replace with sext(encoded_word,1) */
+
+            /* xor = 0xFFFFFFFF * ((encoded_word & 0x8000) != 0); */
+            /* Replace with sext(encoded_word,1) */
+            xor = __builtin_sext(encoded_word, 8) >> 8;
+
             word = word >> 4;
 
             /* Test for new frequency */
@@ -500,16 +545,21 @@ void SpdifTransmit_1(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
                 chkct(c_tx0, XS1_CT_END);
                 return;
             }
-            
+
             /* Get new samples... */
             sample = inuint(c_tx0) >> 4 & 0x0FFFFFF0 ;
             sample2 = inuint(c_tx0);
-          
+
             encoded_word = dataWords_1[word & 0xFF];
-            encoded_word ^= xor;                                /* Xor to invert data if lsab of last data was a 1 */
+
+            /* Xor to invert data if lsab of last data was a 1 */
+            encoded_word ^= xor;
             partout(p, 16, encoded_word);
-            xor = __builtin_sext(encoded_word, 16) >> 16;       /* xor = 0xFFFFFFFF * (encoded_word < 0);  */
-                                                                /* Replace with sext(encoded_word,1) */
+
+            /* xor = 0xFFFFFFFF * (encoded_word < 0);  */
+            /* Replace with sext(encoded_word,1) */
+            xor = __builtin_sext(encoded_word, 16) >> 16;
+
             if (i == 31) {
                 controlLeft = ctrl_left[1];
                 controlRight = ctrl_right[1];
@@ -519,7 +569,10 @@ void SpdifTransmit_1(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
 }
 
 /* Divide by 2, e.g 24 -> 96khz */
-void SpdifTransmit_2(out buffered port:32 p, chanend c_tx0, const int ctrl_left[2], const int ctrl_right[2])
+static void SpdifTransmit_2(out buffered port:32 p,
+                            chanend c_tx0,
+                            const int ctrl_left[2],
+                            const int ctrl_right[2])
 {
     unsigned word;
     unsigned xor = 0;
@@ -560,7 +613,7 @@ void SpdifTransmit_2(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
             encoded_preamble = preableWords_2[word & 0xF];
             encoded_preamble ^= xor;
             partout(p, 16, encoded_preamble);
-            xor = __builtin_sext(encoded_preamble, 16) >> 16;         
+            xor = __builtin_sext(encoded_preamble, 16) >> 16;
             word = word >> 4;
 
             newblock = 0;
@@ -572,9 +625,11 @@ void SpdifTransmit_2(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
             for (int i = 0; i < 7; i++)
             {
                 encoded_byte = dataWords_2[word & 0xF];
-                encoded_byte ^= xor;  /* Xor to invert data if lsab of last data was a 1 */
+
+                /* Xor to invert data if lsab of last data was a 1 */
+                encoded_byte ^= xor;
                 partout(p, 16, encoded_byte);
-                xor = __builtin_sext(encoded_byte, 16) >> 16;         
+                xor = __builtin_sext(encoded_byte, 16) >> 16;
                 word = word >> 4;
             }       
            
@@ -591,7 +646,7 @@ void SpdifTransmit_2(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
             encoded_preamble = preableWords_2[word & 0xF];
             encoded_preamble ^= xor;
             partout(p, 16, encoded_preamble);
-            xor = __builtin_sext(encoded_preamble, 16) >> 16;         
+            xor = __builtin_sext(encoded_preamble, 16) >> 16;
             word = word >> 4;
 
             controlRight >>=1;
@@ -602,9 +657,11 @@ void SpdifTransmit_2(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
             for (int i = 0; i < 7; i++)
             {
                 encoded_byte = dataWords_2[word & 0xF];
-                encoded_byte ^= xor;  // Xor to invert data if lsab of last data was a 1
+
+                /* Xor to invert data if lsab of last data was a 1*/
+                encoded_byte ^= xor;
                 partout(p, 16, encoded_byte);
-                xor = __builtin_sext(encoded_byte, 16) >> 16;         
+                xor = __builtin_sext(encoded_byte, 16) >> 16;
                 word = word >> 4;
             }          
 
@@ -619,7 +676,10 @@ void SpdifTransmit_2(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
 
 
 /* Divide by 4, e.g 24 -> 48khz */
-void SpdifTransmit_4(buffered out port:32 p, chanend c_tx0, const int ctrl_left[2], const int ctrl_right[2])
+static void SpdifTransmit_4(buffered out port:32 p,
+                            chanend c_tx0,
+                            const int ctrl_left[2],
+                            const int ctrl_right[2])
 {
     unsigned word;
     unsigned xor = 0;
@@ -682,12 +742,16 @@ void SpdifTransmit_4(buffered out port:32 p, chanend c_tx0, const int ctrl_left[
             for (int i = 0; i < 7; i++)
             {
                 encoded_byte = dataWords_4[(word & 0xF)*2+1];
-                encoded_byte ^= xor;  /* Xor to invert data if lsab of last data was a 1 */
+
+                /* Xor to invert data if lsab of last data was a 1 */
+                encoded_byte ^= xor;
                 partout(p, 16, encoded_byte);
                 encoded_byte = dataWords_4[(word & 0xF) * 2];  
-                encoded_byte ^= xor;  /* Xor to invert data if lsab of last data was a 1 */
+
+                /* Xor to invert data if lsab of last data was a 1 */
+                encoded_byte ^= xor;
                 partout(p, 16, encoded_byte);
-                xor = __builtin_sext(encoded_byte, 16) >> 16;         
+                xor = __builtin_sext(encoded_byte, 16) >> 16;
                 word = word >> 4;
             }
 
@@ -719,11 +783,13 @@ void SpdifTransmit_4(buffered out port:32 p, chanend c_tx0, const int ctrl_left[
 #pragma loop unroll(7)    
             for (int i = 0; i < 7; i++)
             {
+                /* Xor to invert data if lsab of last data was a 1 */
                 encoded_byte = dataWords_4[(word & 0xF)*2+1];
-                encoded_byte ^= xor;  /* Xor to invert data if lsab of last data was a 1 */
+                encoded_byte ^= xor;
                 partout(p, 16, encoded_byte);
                 encoded_byte = dataWords_4[(word & 0xF) * 2];
-                encoded_byte ^= xor;  /* Xor to invert data if lsab of last data was a 1 */
+                /* Xor to invert data if lsab of last data was a 1 */
+                encoded_byte ^= xor;
                 xor = __builtin_sext(encoded_byte, 16) >> 16;        
                 word = word >> 4;
                 partout(p, 16, encoded_byte);
@@ -738,11 +804,12 @@ void SpdifTransmit_4(buffered out port:32 p, chanend c_tx0, const int ctrl_left[
 }
 
 
-void SpdifTransmitError(chanend c_in)
+static void SpdifTransmitError(chanend c_in)
 {
 
 #if 0
-    printstr("Sample Frequency and Master Clock Frequency combination not supported\n");
+    printstr("Sample Frequency and Master Clock Frequency combination not "
+             "supported\n");
 #endif
     
     while(1)

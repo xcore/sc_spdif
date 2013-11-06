@@ -28,7 +28,8 @@
  *
  * The data format is 24-bit signed left aligned in a 32-bit word.
  *
- * If a XS1_CT_END token is received, the thread stops and waits for new sample/master freq pair
+ * If a XS1_CT_END token is received, the thread stops and waits for new
+ * sample/master freq pair
  *
  * @param   p           S/PDIF tx port 
  * @param   c           Channel-end for sample freq and samples
@@ -36,7 +37,8 @@
 void SpdifTransmit(buffered out port:32 p, chanend c);
 
 /**
- * Configure out port to be clocked by clock block, driven from master clock input.
+ * Configure out port to be clocked by clock block, driven from master clock
+ * input.
  *
  * Must be called before SpdifTransmit()
  *
@@ -46,5 +48,5 @@ void SpdifTransmit(buffered out port:32 p, chanend c);
  */
 void SpdifTransmitPortConfig(out buffered port:32 p, clock cl, in port p_mclk);
 
-#endif
+#endif //_SPDIF_TRANSMIT_
 
