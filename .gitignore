@@ -1,3 +1,5 @@
+run_xpd.log
+.DS_Store
 app_example_rx/.build/
 app_example_rx/bin/
 app_example_tx/.build/

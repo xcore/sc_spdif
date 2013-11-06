@@ -1,4 +1,4 @@
-S/PDIF Transmit Demo 
+S/PDIF Transmit Demo
 ====================
 
 :scope: Example

@@ -9,9 +9,9 @@ S/PDIF Transmit Function Library
 Features
 ========
 
-This module supports:
-
    * S/PDIF transmission at 44100 Hz to 192000 Hz
+   * Runs in a single thread.
+   * Includes an demo application which runs on sliceKIT with audio Slice Card.
    
    
 Documentation
