@@ -10,4 +10,5 @@ Description
 -----------
 
 The purpose of this application is to demonstrate the working of the s/pdif transmit function library.
+This application generates a triangular wave signal and transmits it through the s/pdif output of the audio Slice Card.
 
