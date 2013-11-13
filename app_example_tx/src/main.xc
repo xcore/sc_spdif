@@ -3,15 +3,21 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-#include <assert.h>
 //::declaration
 #include <xs1.h>
 #include <platform.h>
 #include "SpdifTransmit.h"
+#include "spdif_conf.h"
+#include <print.h>
 
-#define SAMPLE_FREQUENCY_HZ 44100
-#define MASTER_CLOCK_FREQUENCY_HZ 22579200
+#define MASTER_CLOCK_FREQUENCY_44_1KHZ 22579200
+#define MASTER_CLOCK_FREQUENCY_48KHZ 24576000
+
+#define MCLK_FSEL_441 0b00
+#define MCLK_FSEL_48 0x10
 #define SPDIF_ENABLE 0x1
+
+
 
 on stdcore[1] : buffered out port:32 oneBitPort = XS1_PORT_1M;
 on stdcore[1] : in port masterClockPort = XS1_PORT_1E;
@@ -19,7 +25,7 @@ on stdcore[1] : clock clockblock = XS1_CLKBLK_1;
 on stdcore[1] : out port p_gpio = XS1_PORT_4E;
 //::
 
-
+unsigned int mclk_freq;
 
 //::spdif thread
 void transmitSpdif(chanend c) {
@@ -33,7 +39,7 @@ void transmitSpdif(chanend c) {
 void generate(chanend c) {
     int i = 0;
     outuint(c, SAMPLE_FREQUENCY_HZ);
-    outuint(c, MASTER_CLOCK_FREQUENCY_HZ);
+    outuint(c, mclk_freq);
     while(1) {
         // Generate a triangle wave
         int sample = i;
@@ -52,14 +58,23 @@ void generate(chanend c) {
         i++;
         i %= WAVE_LEN;
     }
-    //outct(c, XS1_CT_END); // to stop SpdifTransmit thread
 }
 //::
 
 //::main program
 void example(void) {
     chan c;
-    p_gpio <: SPDIF_ENABLE;
+
+    //Initialise clock
+    if ((SAMPLE_FREQUENCY_HZ%22050) == 0){
+        mclk_freq = MASTER_CLOCK_FREQUENCY_44_1KHZ;
+        p_gpio <: SPDIF_ENABLE|MCLK_FSEL_441;
+    }
+    else if ((SAMPLE_FREQUENCY_HZ%24000) == 0){
+    	mclk_freq = MASTER_CLOCK_FREQUENCY_48KHZ;
+    	p_gpio <: SPDIF_ENABLE|MCLK_FSEL_48;
+    }
+
     par {
         transmitSpdif(c);
         generate(c);
