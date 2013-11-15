@@ -156,9 +156,9 @@
 								<option id = "com.xmos.xc.compiler.option.include.paths.10364905" name="com.xmos.xc.compiler.option.include.paths" superClass="com.xmos.xc.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;"/>
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_spdif_rx/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_example_rx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_example_rx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_example_rx/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_spdif_rx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_spdif_rx}&quot;' />
 
 								</option>
@@ -271,9 +271,9 @@
 								<option id = "com.xmos.c.compiler.option.include.paths.80115436" name="com.xmos.c.compiler.option.include.paths" superClass="com.xmos.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;"/>
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_spdif_rx/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_example_rx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_example_rx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_example_rx/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_spdif_rx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_spdif_rx}&quot;' />
 
 								</option>
@@ -392,9 +392,9 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/c++/4.2.1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/c++/4.2.1/xcore-xmos-elf&quot;"/>
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_spdif_rx/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_example_rx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_example_rx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_example_rx/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_spdif_rx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_spdif_rx}&quot;' />
 
 								</option>

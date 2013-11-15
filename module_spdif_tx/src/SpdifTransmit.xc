@@ -3,10 +3,10 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-/** 
+/**
  * @file    SpditTransmit.xc
- * @brief   S/PDIF line transmitter 
- * @author  XMOS Semiconductor 
+ * @brief   S/PDIF line transmitter
+ * @author  XMOS Semiconductor
  *
  * Uses a master clock to output S/PDIF encoded samples.
  * This implementation uses a lookup table to generate S/PDIF encoded data stream from raw audio samples.
@@ -22,15 +22,15 @@ void SpdifTransmitPortConfig(out buffered port:32 p, clock clk, in port p_mclk)
 {
     /* Clock clock block from master-clock */
     configure_clock_src(clk, p_mclk);
-    
+
     /* Clock S/PDIF tx port from MClk */
     configure_out_port_no_ready(p, clk, 0);
-  
+
     /* Set delay to align SPDIF output to the clock at the external flop */
     set_clock_fall_delay(clk, 7);
-   
-    /* Start the clockblock ticking */ 
-    start_clock(clk);  
+
+    /* Start the clockblock ticking */
+    start_clock(clk);
 }
 
 
@@ -59,8 +59,8 @@ unsigned dataWords_1_Nibble[16] = {
     0xAD,
     0xAB,
     0x55
-};    
-      
+};
+
 unsigned dataWords_1[256] = {
     0x3333,
     0xCCCD,
@@ -326,22 +326,22 @@ unsigned preableWords_1[3] = {
 
 
 unsigned dataWords_2[16] = {
-  0x0F0F,           
-  0xF0F3,           
-  0xF0CF,           
-  0x0F33,           
-  0xF30F,           
-  0x0CF3,           
-  0x0CCF,           
-  0xF333,           
-  0xCF0F,           
-  0x30F3,           
-  0x30CF,           
-  0xCF33,           
-  0x330F,           
-  0xCCF3,           
-  0xCCCF,           
-  0x3333            
+  0x0F0F,
+  0xF0F3,
+  0xF0CF,
+  0x0F33,
+  0xF30F,
+  0x0CF3,
+  0x0CCF,
+  0xF333,
+  0xCF0F,
+  0x30F3,
+  0x30CF,
+  0xCF33,
+  0x330F,
+  0xCCF3,
+  0xCCCF,
+  0x3333
 };
 
 unsigned preableWords_2[3] = {
@@ -385,28 +385,28 @@ void SpdifTransmit_1(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
     unsigned encoded_preamble, encoded_word;
 
     unsigned sample, sample2, control, preamble, parity;
-  
+
     /* Check for new frequency */
-    if (testct(c_tx0)) 
-    {    
+    if (testct(c_tx0))
+    {
         chkct(c_tx0, XS1_CT_END);
         return;
     }
-  
+
     /* Get L/R samples */
     sample = inuint(c_tx0) >> 4 & 0x0FFFFFF0 ;
     sample2 = inuint(c_tx0);
 
 #pragma unsafe arrays
-    while (1) 
+    while (1)
     {
         int controlLeft  = ctrl_left[0];
         int controlRight = ctrl_right[0];
         int newblock = 2;
-        
-        for (int i = 0 ; i < 192; i++) 
+
+        for (int i = 0 ; i < 192; i++)
         {
-        
+
             /* Left sample */
             control = (controlLeft & 1) << 30;
             preamble = newblock ;
@@ -447,7 +447,7 @@ void SpdifTransmit_1(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
             word = word >> 4;
 
             sample = sample2 >> 4 & 0x0FFFFFF0 ;
-          
+
             encoded_word = dataWords_1[word & 0xFF];
             encoded_word ^= xor;                                /* Xor to invert data if lsab of last data was a 1 */
             partout(p, 16, encoded_word);
@@ -455,7 +455,7 @@ void SpdifTransmit_1(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
                                                                 /* Replace with sext(encoded_word,1) */
 
             /* Right sample */
-          
+
             control = (controlRight & 1)<<30;
             preamble = (1);
             parity = parity32(sample | control | VALIDITY) << 31;
@@ -481,30 +481,30 @@ void SpdifTransmit_1(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
             encoded_word = dataWords_1[word & 0xFF];
             encoded_word ^= xor;                                /* Xor to invert data if lsab of last data was a 1 */
             partout(p, 16, encoded_word);
-            xor = __builtin_sext(encoded_word, 16) >> 16;       /* xor = 0xFFFFFFFF * (encoded_word < 0); */ 
+            xor = __builtin_sext(encoded_word, 16) >> 16;       /* xor = 0xFFFFFFFF * (encoded_word < 0); */
                                                                 /* Replace with sext(encoded_word,1) */
             word = word >> 8;
 
             controlRight >>=1;
-          
+
             encoded_word = dataWords_1_Nibble[word & 0xF];
             encoded_word ^= xor;                                /* Xor to invert data if lsab of last data was a 1 */
             partout(p, 8, encoded_word);
-            xor = __builtin_sext(encoded_word, 8) >> 8;         /* xor = 0xFFFFFFFF * ((encoded_word & 0x8000) != 0); */ 
+            xor = __builtin_sext(encoded_word, 8) >> 8;         /* xor = 0xFFFFFFFF * ((encoded_word & 0x8000) != 0); */
                                                                 /* Replace with sext(encoded_word,1) */
             word = word >> 4;
 
             /* Test for new frequency */
-            if (testct(c_tx0)) 
+            if (testct(c_tx0))
             {
                 chkct(c_tx0, XS1_CT_END);
                 return;
             }
-            
+
             /* Get new samples... */
             sample = inuint(c_tx0) >> 4 & 0x0FFFFFF0 ;
             sample2 = inuint(c_tx0);
-          
+
             encoded_word = dataWords_1[word & 0xFF];
             encoded_word ^= xor;                                /* Xor to invert data if lsab of last data was a 1 */
             partout(p, 16, encoded_word);
@@ -526,17 +526,17 @@ void SpdifTransmit_2(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
     unsigned encoded_preamble, encoded_byte;
 
     unsigned sample, sample2, control, preamble, parity;
-  
+
     clearbuf(p);
-  
+
 #pragma unsafe arrays
-    while (1) 
+    while (1)
     {
         int controlLeft  = ctrl_left[0];
         int controlRight = ctrl_right[0];
         int newblock = 2;
-        
-        for (int i = 0; i < 192; i++) 
+
+        for (int i = 0; i < 192; i++)
         {
             /* Check for new frequency */
             if (testct(c_tx0))
@@ -548,24 +548,24 @@ void SpdifTransmit_2(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
             /* Input samples */
             sample = inuint(c_tx0) >> 4 & 0x0FFFFFF0 ;
             sample2 = inuint(c_tx0);
-          
+
             control = (controlLeft & 1)<<30;
             preamble = newblock ;
             parity = parity32(sample | control | VALIDITY) << 31;
             word = preamble | sample | control | parity | VALIDITY;
 
             /* Output left sample */
-          
+
             /* Preamble */
             encoded_preamble = preableWords_2[word & 0xF];
             encoded_preamble ^= xor;
             partout(p, 16, encoded_preamble);
-            xor = __builtin_sext(encoded_preamble, 16) >> 16;         
+            xor = __builtin_sext(encoded_preamble, 16) >> 16;
             word = word >> 4;
 
             newblock = 0;
             controlLeft >>=1;
-          
+
             /* Lookup remaining 28 bits, 4 bits at a time */
 #pragma unsafe arrays
 #pragma loop unroll(7)
@@ -574,12 +574,12 @@ void SpdifTransmit_2(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
                 encoded_byte = dataWords_2[word & 0xF];
                 encoded_byte ^= xor;  /* Xor to invert data if lsab of last data was a 1 */
                 partout(p, 16, encoded_byte);
-                xor = __builtin_sext(encoded_byte, 16) >> 16;         
+                xor = __builtin_sext(encoded_byte, 16) >> 16;
                 word = word >> 4;
-            }       
-           
+            }
+
             sample = sample2 >> 4 & 0x0FFFFFF0 ;
-          
+
             control = (controlRight & 1)<<30;
             preamble = (1);
             parity = parity32(sample | control | VALIDITY) << 31;
@@ -591,11 +591,11 @@ void SpdifTransmit_2(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
             encoded_preamble = preableWords_2[word & 0xF];
             encoded_preamble ^= xor;
             partout(p, 16, encoded_preamble);
-            xor = __builtin_sext(encoded_preamble, 16) >> 16;         
+            xor = __builtin_sext(encoded_preamble, 16) >> 16;
             word = word >> 4;
 
             controlRight >>=1;
-          
+
             /* Lookup remaining 28 bits, 4 bits at a time */
 #pragma unsafe arrays
 #pragma loop unroll(7)
@@ -604,9 +604,9 @@ void SpdifTransmit_2(out buffered port:32 p, chanend c_tx0, const int ctrl_left[
                 encoded_byte = dataWords_2[word & 0xF];
                 encoded_byte ^= xor;  // Xor to invert data if lsab of last data was a 1
                 partout(p, 16, encoded_byte);
-                xor = __builtin_sext(encoded_byte, 16) >> 16;         
+                xor = __builtin_sext(encoded_byte, 16) >> 16;
                 word = word >> 4;
-            }          
+            }
 
             if (i == 31) {
                 controlLeft = ctrl_left[1];
@@ -626,22 +626,22 @@ void SpdifTransmit_4(buffered out port:32 p, chanend c_tx0, const int ctrl_left[
     unsigned encoded_preamble, encoded_byte;
 
     unsigned sample, control, preamble, parity, sample2;
-  
+
     clearbuf(p);
-  
+
 #pragma unsafe arrays
-    while (1) 
+    while (1)
     {
         int controlLeft  = ctrl_left[0];
         int controlRight = ctrl_right[0];
         int newblock = 2;
-      
-        for (int i = 0 ; i<192; i++) 
+
+        for (int i = 0 ; i<192; i++)
         {
-            /* Check for new sample frequency */ 
-            if (testct(c_tx0)) 
+            /* Check for new sample frequency */
+            if (testct(c_tx0))
             {
-                /* Swallow control token and return */   
+                /* Swallow control token and return */
                 chkct(c_tx0, XS1_CT_END);
                 return;
             }
@@ -649,57 +649,57 @@ void SpdifTransmit_4(buffered out port:32 p, chanend c_tx0, const int ctrl_left[
             /* Input left and right samples */
             sample = inuint(c_tx0) >> 4 & 0x0FFFFFF0 ;
             sample2 = inuint(c_tx0);
-          
+
             /* Create status bit */
             control = (controlLeft & 1) << 30;
             preamble = newblock ;
 
             /* Generate parity bit */
             parity = parity32(sample | control | VALIDITY) << 31;
-            
-            /* Generate complete 32bit word */ 
+
+            /* Generate complete 32bit word */
             word = preamble | sample | control | parity | VALIDITY;
-          
+
             /* Output left sample */
 
             /* Look up preamble and output */
             encoded_preamble = preambleWords_4[(word & 0xF)*2+1];
             encoded_preamble ^= xor;
             partout(p, 16, encoded_preamble);
-            
+
             encoded_preamble = preambleWords_4[(word & 0xF)*2];
             encoded_preamble ^= xor;
             partout(p, 16, encoded_preamble);
-            xor = __builtin_sext(encoded_preamble, 16) >> 16;         
+            xor = __builtin_sext(encoded_preamble, 16) >> 16;
             word = word >> 4;
 
             newblock = 0;
             controlLeft >>=1;
-          
+
             /* Lookup remaining 28 bits, 4 bits at a time */
 #pragma unsafe arrays
-#pragma loop unroll(7)    
+#pragma loop unroll(7)
             for (int i = 0; i < 7; i++)
             {
                 encoded_byte = dataWords_4[(word & 0xF)*2+1];
                 encoded_byte ^= xor;  /* Xor to invert data if lsab of last data was a 1 */
                 partout(p, 16, encoded_byte);
-                encoded_byte = dataWords_4[(word & 0xF) * 2];  
+                encoded_byte = dataWords_4[(word & 0xF) * 2];
                 encoded_byte ^= xor;  /* Xor to invert data if lsab of last data was a 1 */
                 partout(p, 16, encoded_byte);
-                xor = __builtin_sext(encoded_byte, 16) >> 16;         
+                xor = __builtin_sext(encoded_byte, 16) >> 16;
                 word = word >> 4;
             }
 
             sample = sample2 >> 4 & 0x0FFFFFF0 ;
 
             /*  Output right sample */
-          
+
             control = (controlRight & 1)<<30;
             preamble = (1);
             parity = parity32(sample | control | VALIDITY) << 31;
             word = preamble | sample | control | parity | VALIDITY;
-          
+
             /* Look up and output pre-amble, 2 bytes at a time */
             encoded_preamble = preambleWords_4[(word & 0xF)*2+1];
             encoded_preamble ^= xor;
@@ -708,15 +708,15 @@ void SpdifTransmit_4(buffered out port:32 p, chanend c_tx0, const int ctrl_left[
             encoded_preamble = preambleWords_4[(word & 0xF)*2];
             encoded_preamble ^= xor;
             partout(p, 16, encoded_preamble);
-            xor = __builtin_sext(encoded_preamble, 16) >> 16;        
+            xor = __builtin_sext(encoded_preamble, 16) >> 16;
             word = word >> 4;
 
             controlRight >>=1;
-          
-          
+
+
             /* Lookup remaining 28 bits, 4 bits at a time */
 #pragma unsafe arrays
-#pragma loop unroll(7)    
+#pragma loop unroll(7)
             for (int i = 0; i < 7; i++)
             {
                 encoded_byte = dataWords_4[(word & 0xF)*2+1];
@@ -724,7 +724,7 @@ void SpdifTransmit_4(buffered out port:32 p, chanend c_tx0, const int ctrl_left[
                 partout(p, 16, encoded_byte);
                 encoded_byte = dataWords_4[(word & 0xF) * 2];
                 encoded_byte ^= xor;  /* Xor to invert data if lsab of last data was a 1 */
-                xor = __builtin_sext(encoded_byte, 16) >> 16;        
+                xor = __builtin_sext(encoded_byte, 16) >> 16;
                 word = word >> 4;
                 partout(p, 16, encoded_byte);
             }
@@ -744,16 +744,16 @@ void SpdifTransmitError(chanend c_in)
 #if 0
     printstr("Sample Frequency and Master Clock Frequency combination not supported\n");
 #endif
-    
+
     while(1)
     {
         /* Keep swallowing samples until we get a sample frequency change */
-        if (testct(c_in)) 
-        {    
+        if (testct(c_in))
+        {
             chkct(c_in, XS1_CT_END);
             return;
         }
-        
+
         inuint(c_in);
         inuint(c_in);
     }
@@ -802,7 +802,7 @@ void SpdifTransmit(buffered out port:32 p, chanend c_in)
             chanStat_L[0] = CHAN_STAT_L | CHAN_STAT_88200;
             chanStat_R[0] = CHAN_STAT_R | CHAN_STAT_88200;
             break;
-            
+
         case 96000:
             chanStat_L[0] = CHAN_STAT_L | CHAN_STAT_96000;
             chanStat_R[0] = CHAN_STAT_R | CHAN_STAT_96000;
@@ -823,7 +823,7 @@ void SpdifTransmit(buffered out port:32 p, chanend c_in)
             chanStat_L[0] = CHAN_STAT_L;
             chanStat_R[0] = CHAN_STAT_R;
             break;
-             
+
     }
     chanStat_L[1] = CHAN_STAT_WORD_2;
     chanStat_R[1] = CHAN_STAT_WORD_2;

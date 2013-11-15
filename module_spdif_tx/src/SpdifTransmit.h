@@ -8,12 +8,12 @@
 #ifndef _SPDIF_TRANSMIT_
 #define _SPDIF_TRANSMIT_
 
-/** 
- * Function expects a buffered single bit port clock from the master clock 
- * 
- * All channel communication is done via builtins (e.g. 
+/**
+ * Function expects a buffered single bit port clock from the master clock
+ *
+ * All channel communication is done via builtins (e.g.
  * outuint, outct etc.)
- * 
+ *
  * On startup expects two words over the channel:
  *
  * 1) Desired sample frequency (in Hz)
@@ -30,7 +30,7 @@
  *
  * If a XS1_CT_END token is received, the thread stops and waits for new sample/master freq pair
  *
- * @param   p           S/PDIF tx port 
+ * @param   p           S/PDIF tx port
  * @param   c           Channel-end for sample freq and samples
  */
 void SpdifTransmit(buffered out port:32 p, chanend c);

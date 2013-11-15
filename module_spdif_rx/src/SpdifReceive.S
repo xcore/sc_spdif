@@ -68,7 +68,7 @@
 BERROR:
   STWSP    lr, 8
   BLRF parseSpDifE
-  
+
 parseSpDifTerminate:
     INCT   r11, r1
 #ifdef TEST
@@ -134,7 +134,7 @@ parseSpDifc:
     BLRF startParsing
 
     // Entry points for slowing down and speeding up
-    
+
 BFASTER:
 #ifndef TEST
     GETD r4, r3
@@ -158,8 +158,8 @@ setClock:
   BLRF startParsing
 
 
-    
-startParsing:    
+
+startParsing:
   LDC r5, 0x5555
   LDC r6, 0x0
   LDC r7, 0x1
@@ -172,7 +172,7 @@ startParsing:
 parseSpDifE:
   LDC r5, 0x68
 #endif
-startIt:    
+startIt:
   IN   r4, r0
   IN   r4, r0
   SHLI r4, r4, 1
@@ -193,7 +193,7 @@ startIt:
   BLRF_lu10 L11
   BLRF_lu10 L111
   BLRF_lu10 L1111
-  
+
 
 
 

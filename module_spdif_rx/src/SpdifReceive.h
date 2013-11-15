@@ -27,7 +27,7 @@
 #define FRAME_Z 3
 
 
-/** \brief S/PDIF receive function. 
+/** \brief S/PDIF receive function.
  *
  * This function needs 1 thread and no memory other
  * than ~2800 bytes of program code. It can do 11025, 12000, 22050, 24000,
