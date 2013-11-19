@@ -1,7 +1,7 @@
 S/PDIF 
 ...........
 
-:Latest release: 1.3.0rc3
+:Latest release: 1.4.0beta0
 :Maintainer: XMOS Ltd
 :Description: S/PDIF Component
 
@@ -40,5 +40,5 @@ Issues may be submitted via the Issues tab in this github repo. Response to any 
 Required software (dependencies)
 ================================
 
-  * sc_i2c (ssh://git@github.com/xcore/sc_i2c)
+  * None
 
