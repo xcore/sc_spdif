@@ -16,6 +16,8 @@
         </component>
     </components>
     <description>S/PDIF Component</description>
+    <docdir>module_spdif_tx/doc</docdir>
+    <docdir>app_example_tx/doc</docdir>
     <exclude_dir>doc</exclude_dir>
     <exclude_dir>app_example_rx</exclude_dir>
     <exclude_dir>module_spdif_rx</exclude_dir>
@@ -33,7 +35,8 @@
     <release parenthash = "c71c7aeacf6f31037608b530a85e51ed49459f20" version = "1.3.0rc2" githash = "04eca3570488bf062d1aa9db2e1175cc08a6142f"></release>
     <release parenthash = "811781ca87f13bf8ca3a541633fc5b577c05d7dc" version = "1.3.0rc3" githash = "f5a6fa4cc03765797ba9eb39796077458e974196"></release>
     <release parenthash = "09662aab9c679ac44b012c1fb392b0061664668f" version = "1.4.0beta0" githash = "de1b3a165fcc5240d73c09c1b8447b484f170e83"></release>
-    <release parenthash = "d87baa99a6763dbb7f4e79f34b2ca69c197d2fb2" version = "1.4.0beta1"></release>
+    <release parenthash = "d87baa99a6763dbb7f4e79f34b2ca69c197d2fb2" version = "1.4.0beta1" githash = "edb03d4d6f8b895af026df065266537c5ee3db63"></release>
+    <release parenthash = "edb03d4d6f8b895af026df065266537c5ee3db63" version = "1.4.0beta2"></release>
     <subpartnumber>XM-000050-SW</subpartnumber>
     <vendor>XMOS</vendor>
     <version_defines></version_defines>
