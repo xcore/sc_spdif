@@ -1,0 +1,79 @@
+-------------------------------------------------------------------------------
+-- Descriptive metadata
+-------------------------------------------------------------------------------
+
+componentName = "S/PDIF Transmit Function Library"
+componentFullName = ""
+alternativeNames = { }
+componentDescription = "A function library for implementing S/PDIF transmit functionality at frequency upto 192 KHz"
+componentVersion = "1v0"
+
+-------------------------------------------------------------------------------
+-- Parameter descriptions.
+-------------------------------------------------------------------------------
+
+configPoints =
+{
+  SPDIFfrequency =
+  {
+    short   = "S/PDIF Frequency",
+    long    = "Frequency at which the transmission takes place",
+    help    = "This is the frequency at which the s/pdif transmission takes place. Support frequencies are 44100, 48000, 88200, 96000, 176400 and 192000",
+    units   = "Hz",
+    paramType = "int",
+    default = 44100,
+    define  = "SAMPLE_FREQUENCY_HZ",
+  },
+}
+
+derivedValues = {}
+
+ports = {
+  p_spdif_master_clk = {
+    short   = "SCLK",
+    long    = "SPDIF Clock from master",
+    help    = "Port pin for receiving master clock input.",
+    width   = 1
+  },
+  p_spdif_output = {
+    short   = "SPDIF_OUT",
+    long    = "S/PDIF Output pin",
+    help    = "Port for transmitting the spdif output",
+    width   = 1
+  },
+}
+
+channels = {
+}        
+
+function getConfigStatus()
+  local status = "Trusted Configuration"
+  local issues = {}
+  if swblock.params.SpiMode == 1 or swblock.params.SpiMode == 2 then
+    status = "Valid Configuration"  
+  end
+  return status, issues
+end
+            
+-------------------------------------------------------------------------------
+-- Source generation functions
+-------------------------------------------------------------------------------
+
+generatedCode = {
+  includes = { 
+    "SpdifTransmit.h"
+  },
+  globals = [[
+    port p_spdif_mclk${block.id} = ${ block.ports.p_spdif_mclk};
+    port p_spdif_output${block.id} = ${ block.ports.p_spdif_output};
+    
+    };
+  ]],
+  body = [[
+  ]]
+}
+
+api = {
+       'SpdifTransmitPortConfig',
+       'SpdifTransmit',
+      }
