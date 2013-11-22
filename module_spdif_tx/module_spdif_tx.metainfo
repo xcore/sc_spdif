@@ -20,7 +20,7 @@ configPoints =
     long    = "Frequency at which the transmission takes place",
     help    = "This is the frequency at which the s/pdif transmission takes place. Support frequencies are 44100, 48000, 88200, 96000, 176400 and 192000",
     units   = "Hz",
-    paramType = "int",
+    type    = "int",
     default = 44100,
     define  = "SAMPLE_FREQUENCY_HZ",
   },
