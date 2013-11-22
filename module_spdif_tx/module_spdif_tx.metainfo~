@@ -50,8 +50,6 @@ channels = {
     help = "This channel sends the audio data to the core that handles S/PDIF transmission.",
    },      
 }
-
-
       
 function getConfigStatus()
   local status = "Trusted Configuration"
@@ -72,9 +70,9 @@ generatedCode = {
     "SpdifTransmit.h"
   },
   globals = [[
-    buffered out port:32 oneBitPort = ${swblock.ports.p_spdif_output};
-    in port p_spdif_mclk = ${swblock.ports.p_spdif_master_clk};
-    clock clk_uart_rx = ${swblock.clocks[0]};
+    ${swblock.ports.p_spi_master_mosi}, 
+    ${swblock.ports.p_spi_master_clk}, 
+    ${swblock.ports.p_spi_master_miso},
   ]],
   body = [[
   ]]
@@ -84,7 +82,3 @@ api = {
        'SpdifTransmitPortConfig',
        'SpdifTransmit',
       }
-      
-files = {
-	["app_example_tx/src/spdif_conf.h"] = "src/spdif_conf.h.h",
-}

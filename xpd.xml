@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <xpd>
     <components>
-        <component description = "Demo application for s/pdif transmit library" type = "demoCode" scope = "Example" path = "app_example_tx" local = "false" id = "app_example_tx" name = "S/PDIF Transmit Demo">
+        <component description = "Demo application for s/pdif transmit component" type = "demoCode" scope = "Example" path = "app_example_tx" local = "false" id = "app_example_tx" name = "S/PDIF Transmit Demo">
             <board>XA-SK-AUDIO</board>
             <componentDependency repo = "git://github.com/xcore/sc_spdif" version = "1.4.0">module_spdif_tx</componentDependency>
             <keyword>s/pdif</keyword>
