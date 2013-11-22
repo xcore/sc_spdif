@@ -44,7 +44,7 @@ ports = {
 }
 
 channels = {
-    c_in => {
+    c_in = {
     name = "S/PDIF Channel",
     description = "This channel sends the audio data to the core that handles S/PDIF transmission.",
 }      
