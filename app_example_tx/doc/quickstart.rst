@@ -14,20 +14,20 @@ Hardware Setup
 
 The following hardware components are required:
 
-* xTAG-2 (xTAG Connector Board)
-* XA-SK-XTAG2 (sliceKIT xTAG Adaptor)
-* XP-SKC-L16 (sliceKIT L16 Core Board)
-* XA-SK-AUDIO (Audio Slice Card)
+   * xTAG-2 (xTAG Connector Board)
+   * XA-SK-XTAG2 (sliceKIT xTAG Adaptor)
+   * XP-SKC-L16 (sliceKIT L16 Core Board)
+   * XA-SK-AUDIO (Audio Slice Card)
 
 XP-SKC-L16 sliceKIT Core board has four slots with edge connectors: SQUARE, CIRCLE, TRIANGLE and STAR, and one chain connector marked with a CROSS.
 
 To setup the hardware:
 
-    #. Connect the XA-SK-AUDIO slice card to the XP-SKC-L16 Slicekit core board using the connector marked with the ``CIRCLE``. 
-    #. Connect the XTAG-2 USB debug adaptor to the XP-SKC-L16 Slicekit core board (via the supplied adaptor board)
-    #. Connect the XTAG-2 to host PC (an USB extension cable can be used if desired)
-    #. Connect the power supply to the XP-SKC-L16 Slicekit Core board
-    #. Connect a S/PDIF speaker or receiver to the S/PDIF port of the Audio Slice Card with a co axial cable.
+   #. Connect the XA-SK-AUDIO slice card to the XP-SKC-L16 Slicekit core board using the connector marked with the ``CIRCLE``. 
+   #. Connect the XTAG-2 USB debug adaptor to the XP-SKC-L16 Slicekit core board (via the supplied adaptor board)
+   #. Connect the XTAG-2 to host PC (an USB extension cable can be used if desired)
+   #. Connect the power supply to the XP-SKC-L16 Slicekit Core board
+   #. Connect a S/PDIF speaker or receiver to the S/PDIF port of the Audio Slice Card with a co axial cable.
 
 .. figure:: images/hw_setup.png
    :align: center

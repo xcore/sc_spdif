@@ -33,27 +33,22 @@ ports = {
     short   = "SCLK",
     long    = "SPDIF Clock from master",
     help    = "Port pin for receiving master clock input.",
-    width   = 1
+    width   = 1,
   },
   p_spdif_output = {
     short   = "SPDIF_OUT",
     long    = "S/PDIF Output pin",
     help    = "Port for transmitting the spdif output",
-    width   = 1
+    width   = 1,
   },
 }
 
 channels = {
-}        
+    c_in => {
+    name = "S/PDIF Channel",
+    description = "This channel sends the audio data to the core that handles S/PDIF transmission.",
+}      
 
-function getConfigStatus()
-  local status = "Trusted Configuration"
-  local issues = {}
-  if swblock.params.SpiMode == 1 or swblock.params.SpiMode == 2 then
-    status = "Valid Configuration"  
-  end
-  return status, issues
-end
             
 -------------------------------------------------------------------------------
 -- Source generation functions
