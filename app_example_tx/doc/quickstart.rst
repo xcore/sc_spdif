@@ -1,12 +1,12 @@
 S/PDIF Transmit Demo quickstart guide
 =====================================
 
-This application uses the XP-SKC-L16 sliceKIT L16 Core Board together with the xSOFTip ''S/PDIF Transmit Function Library'' to demonstrate s/pdif transmission on an XCore processor.It is designed to run on the XMOS L16 Slicekit Core Board (XP-SKC-L16) in conjuction with an Audio Slice Card (XA-SK-AUDIO).
+This application uses the XP-SKC-L16 sliceKIT L16 Core Board together with the xSOFTip ''S/PDIF Transmit Function Library'' to demonstrate S/PDIF transmission on an XCore processor.It is designed to run on the XMOS L16 Slicekit Core Board (XP-SKC-L16) in conjuction with an Audio Slice Card (XA-SK-AUDIO).
 
 The functionality of the program is a follows:
 
-    * Setup the audio hardware on the board as required, this includes Master clock selection and SPDIF output enable.
-    * Generate a triangular wave and transmit it thru the s/pdif port of the audio Slice Card.
+    * Setup the audio hardware on the board as required, this includes Master clock selection and S/PDIF output enable.
+    * Generate a triangular wave and transmit it through the S/PDIF port of the audio Slice Card.
 
 
 Hardware Setup
@@ -27,7 +27,7 @@ To setup the hardware:
     #. Connect the XTAG-2 USB debug adaptor to the XP-SKC-L16 Slicekit core board (via the supplied adaptor board)
     #. Connect the XTAG-2 to host PC (an USB extension cable can be used if desired)
     #. Connect the power supply to the XP-SKC-L16 Slicekit Core board
-    #. Connect a s/pdif speaker or receiver to the s/pdif port of the Audio Slice Card with a co axial cable.
+    #. Connect a S/PDIF speaker or receiver to the S/PDIF port of the Audio Slice Card with a co axial cable.
 
 .. figure:: images/hw_setup.png
    :align: center
@@ -61,7 +61,7 @@ Now that the application has been compiled, the next step is to run it on the sl
 #. Click on the ``Run`` icon (the white arrow in the green circle).
 #. At the ``Select Device`` dialog select ``XMOS xTAG-2 connect to L1[0..1]`` and click ``OK``.
 
-Now if you connect the s/pdif output of the audio slice to a speaker you could hear the sound.
+Now if you connect the S/PDIF output of the audio slice to a speaker you could hear the sound.
 
 Next steps
 ----------
