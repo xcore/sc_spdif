@@ -5,8 +5,8 @@ This application uses the XP-SKC-L16 sliceKIT L16 Core Board together with the x
 
 The functionality of the program is a follows:
 
-    * Setup the audio hardware on the board as required, this includes Master clock selection and S/PDIF output enable.
-    * Generate a triangular wave and transmit it through the S/PDIF port of the audio Slice Card.
+   * Setup the audio hardware on the board as required, this includes Master clock selection and S/PDIF output enable.
+   * Generate a triangular wave and transmit it through the S/PDIF port of the audio Slice Card.
 
 
 Hardware Setup
@@ -29,7 +29,7 @@ To setup the hardware:
    #. Connect the power supply to the XP-SKC-L16 Slicekit Core board
    #. Connect a S/PDIF speaker or receiver to the S/PDIF port of the Audio Slice Card with a co axial cable.
 
-.. figure:: images/hw_setup.png
+.. figure:: images/hw_setup*
    :align: center
 
    Hardware Setup for S/PDIF transmit demo

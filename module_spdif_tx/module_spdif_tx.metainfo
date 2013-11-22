@@ -2,10 +2,10 @@
 -- Descriptive metadata
 -------------------------------------------------------------------------------
 
-componentName = "S/PDIF Transmit Function Library"
+componentName = "S/PDIF Transmit Component"
 componentFullName = ""
 alternativeNames = { }
-componentDescription = "A function library for implementing S/PDIF transmit functionality at frequency upto 192 KHz"
+componentDescription = "A component for implementing S/PDIF transmit functionality at frequency upto 192 KHz"
 componentVersion = "1v0"
 
 -------------------------------------------------------------------------------
@@ -45,11 +45,22 @@ ports = {
 
 channels = {
     c_in = {
-    name = "S/PDIF Channel",
-    description = "This channel sends the audio data to the core that handles S/PDIF transmission.",
-}      
+    short = "S/PDIF Tx channel",
+    long = "S/PDIF transmission channel",
+    help = "This channel sends the audio data to the core that handles S/PDIF transmission.",
+   },      
+}
+      
+function getConfigStatus()
+  local status = "Trusted Configuration"
+  local issues = {}
+  if swblock.params.SPDIFfrequency%44100 == 0 or SPDIFfrequency%48000 == 0 and SPDIFfrequency<=196000 == 1 then
+    status = "Valid Configuration"  
+  end
+  return status, issues
+end
 
-            
+
 -------------------------------------------------------------------------------
 -- Source generation functions
 -------------------------------------------------------------------------------
@@ -59,10 +70,9 @@ generatedCode = {
     "SpdifTransmit.h"
   },
   globals = [[
-    port p_spdif_mclk${block.id} = ${ block.ports.p_spdif_mclk};
-    port p_spdif_output${block.id} = ${ block.ports.p_spdif_output};
-    
-    };
+    ${swblock.ports.p_spi_master_mosi}, 
+    ${swblock.ports.p_spi_master_clk}, 
+    ${swblock.ports.p_spi_master_miso},
   ]],
   body = [[
   ]]

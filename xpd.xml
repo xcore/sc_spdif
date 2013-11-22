@@ -8,7 +8,7 @@
             <keyword>digital audio</keyword>
             <keyword>audio</keyword>
         </component>
-        <component description = "S/PDIF transmit module" type = "demoCode" scope = "General Use" path = "module_spdif_tx" local = "false" id = "module_spdif_tx" name = "module_spdif_tx">
+        <component name = "module_spdif_tx" type = "component" buildresults_path = "module_spdif_tx/.module_spdif_tx.buildinfo" scope = "General Use" path = "module_spdif_tx" metainfo_path = "module_spdif_tx/module_spdif_tx.metainfo" local = "false" id = "module_spdif_tx" description = "S/PDIF transmit module">
             <board>XA-SK-AUDIO</board>
             <keyword>s/pdif</keyword>
             <keyword>digital audio</keyword>
@@ -37,7 +37,7 @@
     <release parenthash = "09662aab9c679ac44b012c1fb392b0061664668f" version = "1.4.0beta0" githash = "de1b3a165fcc5240d73c09c1b8447b484f170e83"></release>
     <release parenthash = "d87baa99a6763dbb7f4e79f34b2ca69c197d2fb2" version = "1.4.0beta1" githash = "edb03d4d6f8b895af026df065266537c5ee3db63"></release>
     <release parenthash = "edb03d4d6f8b895af026df065266537c5ee3db63" version = "1.4.0beta2" githash = "4f631fe98066046864200b76a35561930054ac1a"></release>
-    <release parenthash = "e63f5882ba3288b735972814bd925af0cfe11875" version = "1.4.0beta3"></release>
+    <release parenthash = "e63f5882ba3288b735972814bd925af0cfe11875" version = "1.4.0beta3" githash = "a2250f438cca4c3f79cfa2edc663591d2f65bb52"></release>
     <subpartnumber>XM-000050-SW</subpartnumber>
     <vendor>XMOS</vendor>
     <version_defines></version_defines>

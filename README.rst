@@ -1,14 +1,13 @@
 S/PDIF 
-...........
+......
 
-:Latest release: 1.4.0beta3
+:Latest release: 1.4.0beta2
 :Maintainer: XMOS Ltd
 :Description: S/PDIF Component
 
 
 The two modules in this library are used to transmit and receive
-S/PDIF streams, http://en.wikipedia.org/wiki/Spdif. The rx_generator directory contains the programs that are used
-to generate the state machine used
+S/PDIF streams, http://en.wikipedia.org/wiki/Spdif. The rx_generator directory contains the programs that are usedto generate the state machine used
 by the receiver.
 
 Key Features

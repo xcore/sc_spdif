@@ -1,5 +1,5 @@
-S/PDIF Transmit Function Library
-================================
+S/PDIF Transmit Component
+=========================
 
 :scope: General Use
 :description: S/PDIF transmit module
@@ -22,7 +22,4 @@ You can find the documentation for this software in the doc/ directory of the pa
 Support
 =======
 
-  This package is support by XMOS Ltd. Issues can be raised against the software
-  at:
-
-      http://www.xmos.com/support
+This package is support by XMOS Ltd. Issues can be raised against the software at: http://www.xmos.com/support
