@@ -1,11 +1,6 @@
 <?xml version="1.0" ?>
 <xpd>
     <components>
-        <component description = "app_example_rx" type = "demoCode" scope = "General Use" path = "app_spdif_rx_example" local = "false" id = "app_spdif_rx_example" name = "app_example_rx">
-            <board></board>
-            <componentDependency repo = "git://github.com/xcore/sc_spdif" version = "1.4.0">module_spdif_rx</componentDependency>
-            <keyword>spdif input</keyword>
-        </component>
         <component description = "Demo application for s/pdif transmit component" type = "demoCode" scope = "Example" path = "app_spdif_tx_example" local = "false" id = "app_spdif_tx_example" name = "S/PDIF Transmit Demo">
             <board>XA-SK-AUDIO</board>
             <componentDependency repo = "git://github.com/xcore/sc_spdif" version = "1.4.0">module_spdif_tx</componentDependency>
@@ -24,7 +19,7 @@
     <docdir>module_spdif_tx/doc</docdir>
     <docdir>app_spdif_tx_example/doc</docdir>
     <exclude_dir>doc</exclude_dir>
-    <exclude_dir>app_example_rx</exclude_dir>
+    <exclude_dir>app_spdif_rx_example</exclude_dir>
     <exclude_dir>module_spdif_rx</exclude_dir>
     <exclude_dir>generate_rx</exclude_dir>
     <exclude_dir>doc</exclude_dir>
