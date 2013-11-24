@@ -11,3 +11,10 @@ doc/.sources/
 doc/Doxyfile-e
 doc/_build/
 doc/index.pdf
+module_spdif_tx/doc/_build/
+module_spdif_rx/doc/_build/
+*.*~
+*/_build/
+*/.build/
+*/bin/
+*buildinfo

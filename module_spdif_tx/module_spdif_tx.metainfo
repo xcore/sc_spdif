@@ -86,5 +86,5 @@ api = {
       }
       
 files = {
-	["app_example_tx/src/spdif_conf.h"] = "src/spdif_conf.h.h",
+	["app_spdif_tx_example/src/spdif_conf.h"] = "src/spdif_conf.h",
 }
