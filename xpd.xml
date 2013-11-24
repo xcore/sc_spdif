@@ -21,7 +21,7 @@
     <exclude_dir>doc</exclude_dir>
     <exclude_dir>app_spdif_rx_example</exclude_dir>
     <exclude_dir>module_spdif_rx</exclude_dir>
-    <exclude_dir>generate_rx</exclude_dir>
+    <exclude_dir>rx_generator</exclude_dir>
     <exclude_dir>doc</exclude_dir>
     <location>ssh://git@github.com/xcore/sc_spdif</location>
     <name>sc_spdif</name>
