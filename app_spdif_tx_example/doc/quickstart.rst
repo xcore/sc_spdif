@@ -1,7 +1,7 @@
 S/PDIF Transmit Demo quickstart guide
 =====================================
 
-This application uses the XP-SKC-L16 sliceKIT L16 Core Board together with the xSOFTip ''S/PDIF Transmit Function Library'' to demonstrate S/PDIF transmission on an XCore processor.It is designed to run on the XMOS L16 Slicekit Core Board (XP-SKC-L16) in conjuction with an Audio Slice Card (XA-SK-AUDIO).
+This application uses the XP-SKC-L16 sliceKIT L16 Core Board together with the xSOFTip ''S/PDIF Transmit Function Library'' to demonstrate S/PDIF transmission on an XCore controller.It is designed to run on the XMOS L16 Slicekit Core Board (XP-SKC-L16) in conjuction with an Audio sliceCARD (XA-SK-AUDIO).
 
 The functionality of the program is a follows:
 
@@ -41,7 +41,7 @@ Import and Build the Application
 
    #. Open xTimeComposer and open the edit perspective (Window->Open Perspective->XMOS Edit).
    #. Locate the ``S/PDIF Transmit Demo`` item in the xSOFTip pane on the bottom left of the window and drag it into the Project Explorer window in the xTimeComposer. 
-   #. Click on the ``app_example_tx`` item in the Explorer pane.
+   #. Click on the ``app_spdif_tx_example`` item in the Explorer pane.
    #. This will also cause the modules on which this application depends to be imported as well.
    #. This application depends on ``module_spdif_tx`` only.
    #. Click on the app_example_tx item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer.

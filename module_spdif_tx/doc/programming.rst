@@ -22,24 +22,22 @@ An output port, a master-clock input port and a clock block must be declared:
 
 In this example ``transmitSpdif`` function sets up the clock and starts the transmit function to receive on a link.
 
-.. literalinclude:: app_example_tx/src/main.xc
+.. literalinclude:: app_spdif_tx_example/src/main.xc
   :start-after: //::spdif core
   :end-before: //::
 
 The generate function sends configuration settings over the link then generates signal triangle wave signal and sends the data.
 
-.. literalinclude:: app_example_tx/src/main.xc
+.. literalinclude:: app_spdif_tx_example/src/main.xc
   :start-after: //::data generation
   :end-before: //::
 
 The example starts by setting up the PLL on the board. Then it starts 2 cores:
    * S/PDIF transmit
    * the data generator
+   
 An link connects the generator and the transmit core.
 
-.. literalinclude:: app_example_tx/src/main.xc
+.. literalinclude:: app_spdif_tx_example/src/main.xc
   :start-after: //::main program
   :end-before: //::
-
-
-
