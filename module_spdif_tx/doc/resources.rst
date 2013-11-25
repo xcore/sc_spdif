@@ -1,25 +1,49 @@
 Resource requirements
 =====================
 
-Resources
----------
+This section provides an overview of the resources required for S/PDIF transmit component so that the application designer can operate within these constraints accordingly.
+
+
+The following ports are required transmit functionality - 
 
 .. list-table::
     :header-rows: 1
-
-    * - Operation
-      - Resource type
+    
+    * - Resource Type
       - Number required
       - Notes
-    * - S/PDIF output
-      - 1-bit port (output)
+    * - Logical Core
       - 1
       - 
-    * - MCLK input
-      - 1-bit port (input)
+    * - 1 bit port
       - 1
-      - Master clock in
-    * - Master clock block
-      - clock block
+      - S/PDIF Output
+    * - 1 bit port
+      - 1
+      - Master clock Input
+    * - Clock Block
       - 1
       - 
+    * - xCONNECT Link
+      - 1
+      - For S/PDIF transmit
+
+Memory
+++++++
+
+The following is a summary of memory usage of the S/PDIF Transmit component.
+
+
+      codememory:2426
+      datamemory:1542
+
+.. list-table::
+    :header-rows: 1
+    
+    * - Section
+      - Size (Bytes)
+    * - Data Memory
+      - 1542
+    * - Code Memory
+      - 2426
+
