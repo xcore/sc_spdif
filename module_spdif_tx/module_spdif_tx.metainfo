@@ -23,7 +23,7 @@ configPoints =
     type    = "int",
     default = 44100,
     define  = "SAMPLE_FREQUENCY_HZ",
-  },
+  }
 }
 
 derivedValues = {}
@@ -32,7 +32,7 @@ ports = {
   p_spdif_master_clk = {
     short   = "SCLK",
     long    = "SPDIF Clock from master",
-    help    = "Port pin for receiving master clock input.",
+    help    = "Port pin for receiving master clock input",
     width   = 1,
   },
   p_spdif_output = {
@@ -40,15 +40,15 @@ ports = {
     long    = "S/PDIF Output pin",
     help    = "Port for transmitting the spdif output",
     width   = 1,
-  },
+  }
 }
 
 channels = {
-    c_in = {
+    c_spdif_tx = {
     short = "S/PDIF Tx channel",
     long = "S/PDIF transmission channel",
     help = "This channel sends the audio data to the core that handles S/PDIF transmission.",
-   },      
+   }      
 }
 
 
@@ -72,20 +72,15 @@ generatedCode = {
     "SpdifTransmit.h"
   },
   globals = [[
-    buffered out port:32 oneBitPort = ${swblock.ports.p_spdif_output};
-    in port p_spdif_mclk = ${swblock.ports.p_spdif_master_clk};
-    clock clk_uart_rx = ${swblock.clocks[0]};
+buffered out port:32 oneBitPort = ${swblock.ports.p_spdif_output};
+in port p_spdif_mclk = ${swblock.ports.p_spdif_master_clk};
+clock clk_spdif_tx = ${swblock.clocks[0]};
   ]],
-  body = [[
-    SpdifTransmit( ${swblock.chanends.c_spdif_tx});
+body = [[
+    SpdifTransmit(oneBitPort,${swblock.chanends.c_spdif_tx});
   ]]
 }
 
-api = {
-       'SpdifTransmitPortConfig',
-       'SpdifTransmit',
-      }
-      
 files = {
 	["app_spdif_tx_example/src/spdif_conf.h"] = "src/spdif_conf.h",
 }

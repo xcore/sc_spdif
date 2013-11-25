@@ -8,7 +8,7 @@
             <keyword>digital audio</keyword>
             <keyword>audio</keyword>
         </component>
-        <component name = "S/PDIF Transmit Component" type = "component" buildresults_path = "module_spdif_tx/.module_spdif_tx.buildinfo" scope = "General Use" path = "module_spdif_tx" metainfo_path = "module_spdif_tx/module_spdif_tx.metainfo" local = "false" id = "module_spdif_tx" description = "S/PDIF transmit module">
+        <component name = "module_spdif_tx" type = "component" buildresults_path = "module_spdif_tx/.module_spdif_tx.buildinfo" scope = "General Use" path = "module_spdif_tx" metainfo_path = "module_spdif_tx/module_spdif_tx.metainfo" local = "false" id = "module_spdif_tx" description = "S/PDIF transmit module">
             <board>XA-SK-AUDIO</board>
             <keyword>s/pdif</keyword>
             <keyword>digital audio</keyword>
