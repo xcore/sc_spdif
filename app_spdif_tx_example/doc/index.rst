@@ -1,12 +1,12 @@
 S/PDIF Transmit Demo quickstart guide
 =====================================
 
-This application uses the XP-SKC-L16 sliceKIT L16 Core Board together with the xSOFTip ''S/PDIF Transmit Function Library'' to demonstrate S/PDIF transmission on an XCore controller.It is designed to run on the XMOS L16 Slicekit Core Board (XP-SKC-L16) in conjuction with an Audio sliceCARD (XA-SK-AUDIO).
+This application uses the S/PDIF transmit component to demonstrate S/PDIF transmission on an XCore controller.It is designed to run on the XMOS L16 sliceKIT Core Board (XP-SKC-L16) in conjuction with an Audio sliceCARD (XA-SK-AUDIO).
 
-The functionality of the program is a follows:
+The functionality of the program is as follows:
 
-   * Setup the audio hardware on the board as required, this includes Master clock selection and S/PDIF output enable.
-   * Generate a triangular wave and transmit it through the S/PDIF port of the audio Slice Card.
+* Setup the audio hardware on the board as required. This includes Master clock selection and S/PDIF output enable.
+* Generate a triangular wave and transmit it through the S/PDIF port of the audio sliceCARD.
 
 
 Hardware Setup
@@ -17,17 +17,17 @@ The following hardware components are required:
    * xTAG-2 (xTAG Connector Board)
    * XA-SK-XTAG2 (sliceKIT xTAG Adaptor)
    * XP-SKC-L16 (sliceKIT L16 Core Board)
-   * XA-SK-AUDIO (Audio Slice Card)
+   * XA-SK-AUDIO (Audio SliceCARD)
 
 XP-SKC-L16 sliceKIT Core board has four slots with edge connectors: SQUARE, CIRCLE, TRIANGLE and STAR, and one chain connector marked with a CROSS.
 
 To setup the hardware:
 
-   #. Connect the XA-SK-AUDIO slice card to the XP-SKC-L16 Slicekit core board using the connector marked with the ``CIRCLE``. 
-   #. Connect the XTAG-2 USB debug adaptor to the XP-SKC-L16 Slicekit core board (via the supplied adaptor board)
-   #. Connect the XTAG-2 to host PC (an USB extension cable can be used if desired)
-   #. Connect the power supply to the XP-SKC-L16 Slicekit Core board
-   #. Connect a S/PDIF speaker or receiver to the S/PDIF port of the Audio Slice Card with a co axial cable.
+#. Connect the XA-SK-AUDIO slice card to the XP-SKC-L16 Slicekit core board using the connector marked with the ``CIRCLE``. 
+#. Connect the XTAG-2 USB debug adaptor to the XP-SKC-L16 Slicekit core board (via the supplied adaptor board)
+#. Connect the XTAG-2 to host PC (an USB extension cable can be used if desired)
+#. Connect the power supply to the XP-SKC-L16 Slicekit Core board
+#. Connect a S/PDIF speaker or receiver to the S/PDIF port of the Audio Slice Card with a co axial cable.
 
 .. figure:: images/hw_setup.*
    :align: center
@@ -39,13 +39,13 @@ To setup the hardware:
 Import and Build the Application
 ++++++++++++++++++++++++++++++++
 
-   #. Open xTimeComposer and open the edit perspective (Window->Open Perspective->XMOS Edit).
-   #. Locate the ``S/PDIF Transmit Demo`` item in the xSOFTip pane on the bottom left of the window and drag it into the Project Explorer window in the xTimeComposer. 
-   #. Click on the ``app_spdif_tx_example`` item in the Explorer pane.
-   #. This will also cause the modules on which this application depends to be imported as well.
-   #. This application depends on ``module_spdif_tx`` only.
-   #. Click on the app_example_tx item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer.
-   #. Check the console window to verify that the application has built successfully.
+#. Open xTimeComposer and open the edit perspective (Window->Open Perspective->XMOS Edit).
+#. Locate the ``S/PDIF Transmit Demo`` item in the xSOFTip pane on the bottom left of the window and drag it into the Project Explorer window in the xTimeComposer. 
+#. Click on the ``app_spdif_tx_example`` item in the Explorer pane.
+#. This will also cause the modules on which this application depends to be imported as well.
+#. This application depends on ``module_spdif_tx`` only.
+#. Click on the ``app_spdif_tx_example`` item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer.
+#. Check the console window to verify that the application has built successfully.
 
 
 For help in using xTIMEcomposer, try the xTIMEcomposer tutorial, which you can find by selecting :menuitem:`Help, Tutorials` from the xTIMEcomposer menu.
@@ -66,5 +66,5 @@ Now if you connect the S/PDIF output of the audio slice to a speaker you could h
 Next steps
 ----------
 
-   #. Examine the application code. In xTIMEcomposer Studio navigate to the ``src`` directory under app_example_rx and double click on the ``main.xc`` file within it. The file will open in the central editor window.
-   #. Trying changing the ``SAMPLE_FREQUENCY_HZ`` define on line 12 of ``spdif_conf.h`` to 48000, 88200, 96000, 176400 or 192000 to generate s/pdif signal at those frequencies.
+#. Examine the application code. In xTIMEcomposer Studio navigate to the ``src`` directory under ``app_spdif_tx_example`` and double click on the ``main.xc`` file within it. The file will open in the central editor window.
+#. Trying changing the ``SAMPLE_FREQUENCY_HZ`` define on line 12 of ``spdif_conf.h`` to 48000, 88200, 96000, 176400 or 192000 to generate s/pdif signal at those frequencies.

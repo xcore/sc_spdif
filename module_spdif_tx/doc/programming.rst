@@ -7,7 +7,7 @@ This component runs on a single logical core. The logical core takes the followi
    #. The S/PDIF transmission frequency in Hz.
    #. The master clock frequency in Hz.
 
-Once the transmission frequency and master clock frequency are sent to the core, the audio data could be sent thru the link.
+Once the transmission frequency and master clock frequency are sent to the core, the audio data could be sent thorough the link.
 
 Usage Example
 -------------
@@ -36,7 +36,7 @@ The example starts by setting up the PLL on the board. Then it starts 2 cores:
    * S/PDIF transmit
    * the data generator
    
-An link connects the generator and the transmit core.
+A link connects the generator and the transmit core.
 
 .. literalinclude:: app_spdif_tx_example/src/main.xc
   :start-after: //::main program

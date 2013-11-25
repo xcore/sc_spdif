@@ -20,6 +20,8 @@
 
 
 on stdcore[1] : buffered out port:32 oneBitPort = XS1_PORT_1M;
+
+//::declaration
 on stdcore[1] : in port masterClockPort = XS1_PORT_1E;
 on stdcore[1] : clock clockblock = XS1_CLKBLK_1;
 on stdcore[1] : out port p_gpio = XS1_PORT_4E;
@@ -27,7 +29,7 @@ on stdcore[1] : out port p_gpio = XS1_PORT_4E;
 
 unsigned int mclk_freq;
 
-//::spdif thread
+//::spdif core
 void transmitSpdif(chanend c) {
     SpdifTransmitPortConfig(oneBitPort, clockblock, masterClockPort);
     SpdifTransmit(oneBitPort, c);
@@ -80,6 +82,7 @@ void example(void) {
         generate(c);
     }
 }
+//::
 
 int main(void) {
     par {
@@ -87,4 +90,4 @@ int main(void) {
     }
     return 0;
 }
-//::
+
