@@ -1,7 +1,7 @@
 S/PDIF Transmit Demo quickstart guide
 =====================================
 
-This application uses the XP-SKC-L16 sliceKIT L16 Core Board together with the xSOFTip ''S/PDIF Transmit Function Library'' to demonstrate S/PDIF transmission on an XCore controller.It is designed to run on the XMOS L16 Slicekit Core Board (XP-SKC-L16) in conjuction with an Audio sliceCARD (XA-SK-AUDIO).
+This application uses the XP-SKC-L16 sliceKIT L16 Core Board together with the xSOFTip ''S/PDIF Transmit Function Library'' to demonstrate S/PDIF transmission on an xCORE controller.It is designed to run on the XMOS L16 Slicekit Core Board (XP-SKC-L16) in conjuction with an Audio sliceCARD (XA-SK-AUDIO).
 
 The functionality of the program is a follows:
 

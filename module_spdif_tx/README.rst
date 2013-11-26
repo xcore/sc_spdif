@@ -9,7 +9,7 @@ S/PDIF Transmit Component
 Features
 ========
 
-   * S/PDIF transmission at 44100 Hz to 192000 Hz
+   * S/PDIF transmission at 44100 Hz upto 192000 Hz
    * Runs in a single core.
    * Includes an demo application which runs on sliceKIT with audio Slice Card.
    

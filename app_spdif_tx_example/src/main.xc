@@ -6,7 +6,7 @@
 //::declaration
 #include <xs1.h>
 #include <platform.h>
-#include "SpdifTransmit.h"
+#include "Spdif_transmit.h"
 #include "spdif_conf.h"
 #include <print.h>
 
@@ -19,20 +19,20 @@
 
 
 
-on stdcore[1] : buffered out port:32 oneBitPort = XS1_PORT_1M;
+on tile[1] : buffered out port:32 oneBitPort = XS1_PORT_1M;
 
 //::declaration
-on stdcore[1] : in port masterClockPort = XS1_PORT_1E;
-on stdcore[1] : clock clockblock = XS1_CLKBLK_1;
-on stdcore[1] : out port p_gpio = XS1_PORT_4E;
+on tile[1] : in port masterClockPort = XS1_PORT_1E;
+on tile[1] : clock clockblock = XS1_CLKBLK_1;
+on tile[1] : out port p_gpio = XS1_PORT_4E;
 //::
 
 unsigned int mclk_freq;
 
 //::spdif core
 void transmitSpdif(chanend c) {
-    SpdifTransmitPortConfig(oneBitPort, clockblock, masterClockPort);
-    SpdifTransmit(oneBitPort, c);
+    spdif_transmit_port_config(oneBitPort, clockblock, masterClockPort);
+    Spdif_transmit(oneBitPort, c);
 }
 //::
 

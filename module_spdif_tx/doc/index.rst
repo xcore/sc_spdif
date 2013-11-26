@@ -1,5 +1,5 @@
-XMOS xSOFTip S/PDIF Transmit component
-======================================
+S/PDIF Transmit component
+=========================
 
 .. toctree::
 

@@ -18,7 +18,7 @@
 
 #define    VALIDITY         0x00000000        /* Validity bit (x<<28) */
 
-void SpdifTransmitPortConfig(out buffered port:32 p, clock clk, in port p_mclk)
+void spdif_transmit_port_config(out buffered port:32 p, clock clk, in port p_mclk)
 {
     /* Clock clock block from master-clock */
     configure_clock_src(clk, p_mclk);
@@ -378,7 +378,7 @@ unsigned preambleWords_4[6] = {
 
 
 /* E.g. 24MHz -> 192kHz */
-void SpdifTransmit_1(out buffered port:32 p,
+void spdif_transmit_1(out buffered port:32 p,
                     chanend c_tx0,
                     const int ctrl_left[2],
                     const int ctrl_right[2])
@@ -569,7 +569,7 @@ void SpdifTransmit_1(out buffered port:32 p,
 }
 
 /* Divide by 2, e.g 24 -> 96khz */
-static void SpdifTransmit_2(out buffered port:32 p,
+static void spdif_transmit_2(out buffered port:32 p,
                             chanend c_tx0,
                             const int ctrl_left[2],
                             const int ctrl_right[2])
@@ -676,7 +676,7 @@ static void SpdifTransmit_2(out buffered port:32 p,
 
 
 /* Divide by 4, e.g 24 -> 48khz */
-static void SpdifTransmit_4(buffered out port:32 p,
+static void spdif_transmit_4(buffered out port:32 p,
                             chanend c_tx0,
                             const int ctrl_left[2],
                             const int ctrl_right[2])
@@ -804,7 +804,7 @@ static void SpdifTransmit_4(buffered out port:32 p,
 }
 
 
-static void SpdifTransmitError(chanend c_in)
+static void spdif_transmit_Error(chanend c_in)
 {
 
 #if 0
@@ -841,7 +841,7 @@ static void SpdifTransmitError(chanend c_in)
 
 
 /* S/PDIF transmit thread */
-void SpdifTransmit(buffered out port:32 p, chanend c_in)
+void spdif_transmit(buffered out port:32 p, chanend c_in)
 {
     int chanStat_L[2], chanStat_R[2];
     unsigned divide;
@@ -902,22 +902,22 @@ void SpdifTransmit(buffered out port:32 p, chanend c_in)
     {
         case 1:
             /* Highest sample freq supported by mclk freq, eg: 24 -> 192 */
-            SpdifTransmit_1(p,  c_in, chanStat_L, chanStat_R);
+            spdif_transmit_1(p,  c_in, chanStat_L, chanStat_R);
             break;
 
         case 2:
             /* E.g. 24 -> 96 */
-           SpdifTransmit_2(p, c_in, chanStat_L, chanStat_R);
+           spdif_transmit_2(p, c_in, chanStat_L, chanStat_R);
            break;
 
         case 4:
             /* E.g. 24MHz -> 48kHz */
-            SpdifTransmit_4(p, c_in, chanStat_L, chanStat_R);
+            spdif_transmit_4(p, c_in, chanStat_L, chanStat_R);
             break;
 
         default:
             /* Mclk does not support required sample freq */
-            SpdifTransmitError(c_in);
+            spdif_transmit_Error(c_in);
             break;
     }
 }

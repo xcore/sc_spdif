@@ -14,7 +14,7 @@
  * All channel communication is done via builtins (e.g.
  * outuint, outct etc.)
  *
- * On startup expects two words over the channel:
+ * On startup it expects two words over the channel:
  *
  * 1) Desired sample frequency (in Hz)
  *
@@ -34,19 +34,19 @@
  * @param   p           S/PDIF tx port
  * @param   c           Channel-end for sample freq and samples
  */
-void SpdifTransmit(buffered out port:32 p, chanend c);
+void spdif_transmit(buffered out port:32 p, chanend c);
 
 /**
  * Configure out port to be clocked by clock block, driven from master clock
  * input.
  *
- * Must be called before SpdifTransmit()
+ * Must be called before spdif_transmit()
  *
  * @param   p           S/PDIF tx port
  * @param   cl          Clock block to be used
  * @param   p_mclk      Master-clock input port
  */
-void SpdifTransmitPortConfig(out buffered port:32 p, clock cl, in port p_mclk);
+void spdif_transmit_port_config(out buffered port:32 p, clock cl, in port p_mclk);
 
 #endif //_SPDIF_TRANSMIT_
 

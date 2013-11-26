@@ -1,7 +1,7 @@
 S/PDIF Transmit Demo quickstart guide
 =====================================
 
-This application uses the S/PDIF transmit component to demonstrate S/PDIF transmission on an XCore controller.It is designed to run on the XMOS L16 sliceKIT Core Board (XP-SKC-L16) in conjuction with an Audio sliceCARD (XA-SK-AUDIO).
+This application uses the S/PDIF transmit component to demonstrate S/PDIF transmission on an xCORE controller.It is designed to run on the XMOS L16 sliceKIT Core Board (XP-SKC-L16) in conjuction with an Audio sliceCARD (XA-SK-AUDIO).
 
 The functionality of the program is as follows:
 
@@ -27,7 +27,7 @@ To setup the hardware:
 #. Connect the XTAG-2 USB debug adaptor to the XP-SKC-L16 Slicekit core board (via the supplied adaptor board)
 #. Connect the XTAG-2 to host PC (an USB extension cable can be used if desired)
 #. Connect the power supply to the XP-SKC-L16 Slicekit Core board
-#. Connect a S/PDIF speaker or receiver to the S/PDIF port of the Audio Slice Card with a co axial cable.
+#. Connect a S/PDIF speaker or receiver to the S/PDIF port of the Audio Slice Card with a coaxial cable.
 
 .. figure:: images/hw_setup.*
    :align: center
@@ -67,4 +67,4 @@ Next steps
 ----------
 
 #. Examine the application code. In xTIMEcomposer Studio navigate to the ``src`` directory under ``app_spdif_tx_example`` and double click on the ``main.xc`` file within it. The file will open in the central editor window.
-#. Trying changing the ``SAMPLE_FREQUENCY_HZ`` define on line 12 of ``spdif_conf.h`` to 48000, 88200, 96000, 176400 or 192000 to generate s/pdif signal at those frequencies.
+#. Try changing the ``SAMPLE_FREQUENCY_HZ`` define on line 12 of ``spdif_conf.h`` to 48000, 88200, 96000, 176400 or 192000 to generate s/pdif signal at those frequencies.
