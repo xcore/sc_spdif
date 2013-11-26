@@ -7,8 +7,8 @@ S/PDIF Transmit API
 
 Configuration Functions
 +++++++++++++++++++++++
-.. doxygenfunction:: SpdifTransmitPortConfig
+.. doxygenfunction:: spdif_transmit_port_config
 
 Transmit Functions
 ++++++++++++++++++
-.. doxygenfunction:: SpdifTransmit
+.. doxygenfunction:: spdif_transmit
