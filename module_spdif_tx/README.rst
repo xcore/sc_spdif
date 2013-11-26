@@ -7,7 +7,7 @@ S/PDIF Transmit Component
 :boards: XA-SK-AUDIO
 
 Features
-========
+--------
 
    * S/PDIF transmission at 44100 Hz upto 192000 Hz
    * Runs in a single core.
@@ -15,11 +15,11 @@ Features
    
    
 Documentation
-=============
+-------------
 
 You can find the documentation for this software in the doc/ directory of the package.
 
 Support
-=======
+-------
 
 This package is support by XMOS Ltd. Issues can be raised against the software at: http://www.xmos.com/support
