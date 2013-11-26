@@ -20,3 +20,4 @@ _build/
 *buildinfo
 \#*
 __generated_module_spdif_tx_app/
+app_spdif_tx_example/.settings/
