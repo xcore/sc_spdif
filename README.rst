@@ -1,7 +1,7 @@
 S/PDIF 
 ......
 
-:Latest release: 1.4.0beta6
+:Latest release: 1.4.0beta7
 :Maintainer: XMOS Ltd
 :Description: S/PDIF Component
 
