@@ -24,7 +24,7 @@ The following ports are required transmit functionality -
     * - Clock Block
       - 1
       - 
-    * - xCONNECT Link
+    * - Channels
       - 1
       - For S/PDIF transmit
 
@@ -32,10 +32,6 @@ Memory
 ++++++
 
 The following is a summary of memory usage of the S/PDIF Transmit component.
-
-
-      codememory:2426
-      datamemory:1542
 
 .. list-table::
     :header-rows: 1
