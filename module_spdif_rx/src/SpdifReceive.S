@@ -50,7 +50,8 @@
 .syntax architectural
 
 #define STACK  9
-    .globl   SpdifReceive
+.globl   SpdifReceive
+.type    SpdifReceive, @function
 .linkset SpdifReceive.nstackwords,STACK
 .globl   SpdifReceive.nstackwords
 .linkset SpdifReceive.maxthreads,0
@@ -64,7 +65,7 @@
 .globl   parseSpDifc.nstackwords
 
 .cc_top   SpdifReceive.func, SpdifReceive
-
+SpdifReceive_start: // Used for .size directive
 BERROR:
   STWSP    lr, 8
   BLRF parseSpDifE
@@ -2227,4 +2228,5 @@ L000001_S:
 FFASTER: BRBU BFASTER
 FSLOWER: BRBU BSLOWER
 FERROR: BRBU BERROR
+.size SpdifReceive, .-SpdifReceive_start
 .cc_bottom   SpdifReceive.func
