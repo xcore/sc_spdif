@@ -1,13 +1,6 @@
 <?xml version="1.0" ?>
 <xpd>
     <components>
-        <component description = "Simple analog to S/PDIF converter using the audio slice." type = "demoCode" scope = "Example" path = "app_analog_spdif_bridge_demo" local = "false" id = "app_analog_spdif_bridge_demo" name = "Analog to S/PDIF Bridge Demo">
-            <board>XA-SK-AUDIO</board>
-            <keyword>audio</keyword>
-            <keyword>analog audio</keyword>
-            <keyword>digital audio</keyword>
-            <keyword>s/pdif</keyword>
-        </component>
         <component description = "Demo application for s/pdif transmit component" type = "demoCode" scope = "Example" path = "app_spdif_tx_example" local = "false" id = "app_spdif_tx_example" name = "S/PDIF Transmit Demo">
             <board>XA-SK-AUDIO</board>
             <componentDependency repo = "git://github.com/xcore/sc_spdif" version = "1.4.0">module_spdif_tx</componentDependency>
@@ -22,14 +15,6 @@
             <keyword>audio</keyword>
         </component>
     </components>
-    <dependency repo = "sc_i2s">
-        <githash>d2195e9665b7e731f8e9ce306836151b6cad4cf2</githash>
-        <uri>https://github.com/xcore/sc_i2s</uri>
-    </dependency>
-    <dependency repo = "sc_i2c">
-        <githash>55fbc6f357e700987a5b12872bd5e7394c8535b3</githash>
-        <uri>https://github.com/xcore/sc_i2c</uri>
-    </dependency>
     <description>S/PDIF Component</description>
     <docdir>module_spdif_tx/doc</docdir>
     <docdir>app_spdif_tx_example/doc</docdir>
