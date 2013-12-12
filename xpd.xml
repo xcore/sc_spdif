@@ -1,6 +1,13 @@
 <?xml version="1.0" ?>
 <xpd>
     <components>
+        <component description = "Simple analog to S/PDIF converter using the audio slice." type = "demoCode" scope = "Example" path = "app_analog_spdif_bridge_demo" local = "false" id = "app_analog_spdif_bridge_demo" name = "Analog to S/PDIF Bridge Demo">
+            <board>XA-SK-AUDIO</board>
+            <keyword>audio</keyword>
+            <keyword>analog audio</keyword>
+            <keyword>digital audio</keyword>
+            <keyword>s/pdif</keyword>
+        </component>
         <component description = "Demo application for s/pdif transmit component" type = "demoCode" scope = "Example" path = "app_spdif_tx_example" local = "false" id = "app_spdif_tx_example" name = "S/PDIF Transmit Demo">
             <board>XA-SK-AUDIO</board>
             <componentDependency repo = "git://github.com/xcore/sc_spdif" version = "1.4.0">module_spdif_tx</componentDependency>
@@ -15,9 +22,18 @@
             <keyword>audio</keyword>
         </component>
     </components>
+    <dependency repo = "sc_i2s">
+        <githash>d2195e9665b7e731f8e9ce306836151b6cad4cf2</githash>
+        <uri>https://github.com/xcore/sc_i2s</uri>
+    </dependency>
+    <dependency repo = "sc_i2c">
+        <githash>55fbc6f357e700987a5b12872bd5e7394c8535b3</githash>
+        <uri>https://github.com/xcore/sc_i2c</uri>
+    </dependency>
     <description>S/PDIF Component</description>
     <docdir>module_spdif_tx/doc</docdir>
     <docdir>app_spdif_tx_example/doc</docdir>
+    <docdir>app_analog_spdif_bridge_demo</docdir>
     <exclude_dir>doc</exclude_dir>
     <exclude_dir>app_spdif_rx_example</exclude_dir>
     <exclude_dir>module_spdif_rx</exclude_dir>
@@ -42,7 +58,7 @@
     <release parenthash = "2612aff76f51d0fa75928aa63904223f69beb65e" version = "1.4.0beta5" githash = "0e335b7649a840a87dd9d9d070a5a73e054a9491"></release>
     <release parenthash = "a0d1eb4da1c64fa3e154e282897340bd0a17a0d6" version = "1.4.0beta6" githash = "d19469d7c51200c5ab91f7855e15f476d563ae03"></release>
     <release parenthash = "f29caf940730aac26548d56b7e9270389c409b60" version = "1.4.0beta7" githash = "5e305741f7b663016d8d138eaddf2dafbb85147d"></release>
-    <release parenthash = "0969d39eb469c4e386cea33c4a28d59f8d66b5e1" version = "1.4.0beta8"></release>
+    <release parenthash = "0969d39eb469c4e386cea33c4a28d59f8d66b5e1" version = "1.4.0beta8" githash = "74361d9a6032e09ffae41ebb9f229a1161e9cf1c"></release>
     <subpartnumber>XM-000050-SW</subpartnumber>
     <vendor>XMOS</vendor>
     <version_defines></version_defines>

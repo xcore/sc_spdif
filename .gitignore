@@ -21,3 +21,4 @@ _build/
 \#*
 __generated_module_spdif_tx_app/
 app_spdif_tx_example/.settings/
+app_analog_spdif_bridge_demo/.settings/
