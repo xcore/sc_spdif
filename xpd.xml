@@ -3,19 +3,20 @@
     <components>
         <component description = "app_example_rx" type = "demoCode" scope = "General Use" path = "app_example_rx" local = "false" id = "app_example_rx" name = "app_example_rx">
             <board></board>
-            <componentDependency repo = "git://github.com/xcore/sc_spdif" version = "1.3.0">module_spdif_rx</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_spdif" version = "1.3.1">module_spdif_rx</componentDependency>
             <keyword>spdif input</keyword>
         </component>
         <component description = "app_example_tx" type = "demoCode" scope = "General Use" path = "app_example_tx" local = "false" id = "app_example_tx" name = "app_example_tx">
-            <componentDependency repo = "git://github.com/xcore/sc_spdif" version = "1.3.0">module_spdif_tx</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.1">module_i2c_master</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_spdif" version = "1.3.1">module_spdif_tx</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.3.0">module_i2c_master</componentDependency>
         </component>
         <component description = "S/PDIF transmit module" type = "demoCode" scope = "General Use" path = "module_spdif_rx" local = "false" id = "module_spdif_rx" name = "module_spdif_tx"></component>
         <component description = "S/PDIF receive module" type = "demoCode" scope = "General Use" path = "module_spdif_tx" local = "false" id = "module_spdif_tx" name = "module_spdif_rx"></component>
     </components>
     <dependency repo = "sc_i2c">
-        <githash>0834f3eedf056f0fff82fdcc5e436477321d442b</githash>
+        <githash>6fe8660a95005478d125ab607a0cc25edc706236</githash>
         <uri>ssh://git@github.com/xcore/sc_i2c</uri>
+        <version>2.3.0beta0</version>
     </dependency>
     <description>S/PDIF Component</description>
     <docdir>doc</docdir>
@@ -31,7 +32,8 @@
     <release parenthash = "c71c7aeacf6f31037608b530a85e51ed49459f20" version = "1.3.0rc2" githash = "04eca3570488bf062d1aa9db2e1175cc08a6142f"></release>
     <release parenthash = "811781ca87f13bf8ca3a541633fc5b577c05d7dc" version = "1.3.0rc3" githash = "f5a6fa4cc03765797ba9eb39796077458e974196"></release>
     <release parenthash = "8ba66d8c1c02c7c940394ba32f773073a4647073" version = "1.3.0rc4" githash = "7042305acdb0df5351cf31e65ead4b35b07d6c5b"></release>
-    <release parenthash = "78318e20c01a098fe29dcf310749586bcff5e9f8" version = "1.3.1beta0"></release>
+    <release parenthash = "78318e20c01a098fe29dcf310749586bcff5e9f8" version = "1.3.1beta0" githash = "2c121fe88f01494999233270ac592ebb311515b0"></release>
+    <release parenthash = "2c121fe88f01494999233270ac592ebb311515b0" version = "1.3.1beta1"></release>
     <subpartnumber>XM-000050-SW</subpartnumber>
     <vendor>XMOS</vendor>
     <version_defines></version_defines>
