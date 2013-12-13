@@ -31,8 +31,9 @@
         <version>2.2.1rc0</version>
     </dependency>
     <dependency repo = "sc_i2s">
-        <githash>d2195e9665b7e731f8e9ce306836151b6cad4cf2</githash>
+        <githash>8ebdd07c01d3419c26723d2d111503e0acbc4c70</githash>
         <uri>https://github.com/xcore/sc_i2s</uri>
+        <version>1.4.3rc0</version>
     </dependency>
     <description>S/PDIF Component</description>
     <docdir>module_spdif_tx/doc</docdir>
