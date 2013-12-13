@@ -156,8 +156,7 @@
 								<option id = "com.xmos.xc.compiler.option.include.paths.29687496" name="com.xmos.xc.compiler.option.include.paths" superClass="com.xmos.xc.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;"/>
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_analog_spdif_bridge_demo/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_analog_spdif_bridge_demo/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_analog_spdif_bridge_demo/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_analog_spdif_bridge_demo}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
@@ -276,8 +275,7 @@
 								<option id = "com.xmos.c.compiler.option.include.paths.1012227" name="com.xmos.c.compiler.option.include.paths" superClass="com.xmos.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;"/>
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_analog_spdif_bridge_demo/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_analog_spdif_bridge_demo/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_analog_spdif_bridge_demo/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_analog_spdif_bridge_demo}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
@@ -402,8 +400,7 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/c++/4.2.1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/c++/4.2.1/xcore-xmos-elf&quot;"/>
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_analog_spdif_bridge_demo/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_analog_spdif_bridge_demo/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_analog_spdif_bridge_demo/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_analog_spdif_bridge_demo}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
