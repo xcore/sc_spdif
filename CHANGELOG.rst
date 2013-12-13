@@ -9,3 +9,6 @@ sc_spdif Change Log
     - Modified code to work on L16 sliceKIT with audio Slice Card.
     - Removed sc_i2c dependency as it is no longer needed.
     - Modified code to match xSOFTip coding standards.
+
+1.4.1
+    - Added analog to spdif bridge application.
