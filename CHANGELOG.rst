@@ -7,7 +7,7 @@ sc_spdif Change Log
 
   * Changes to dependencies:
 
-    - sc_i2c: 2.2.1rc0 -> 2.3.0beta0
+    - sc_i2c: 2.2.1rc0 -> 2.3.0beta1
 
       + module_i2c_simple fixed to ACK correctly during multi-byte reads (all but the final byte will be now be ACKd)
       + module_i2c_simple can now be built with support to send repeated starts and retry reads and writes NACKd by slave
