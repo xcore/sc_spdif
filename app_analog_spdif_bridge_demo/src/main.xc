@@ -60,7 +60,6 @@ int main(void){
         par{
                 i2s_master(i2s_resources, c_i2s, mclk_bclk_div);
                 i2s_to_spdif_bridge(c_i2s,c_spdif);
-                //generate(c_spdif);
                 spdif_transmit(oneBitPort,c_spdif);
             }
         }

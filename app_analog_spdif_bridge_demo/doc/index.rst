@@ -23,7 +23,7 @@ To setup the hardware:
 #. Connect the XTAG-2 to host PC (an USB extension cable can be used if desired)
 #. Connect the power supply to the XP-SKC-L16 sliceKIT Core board
 #. Connect a S/PDIF speaker or receiver to the S/PDIF port of the Audio Slice Card with a coaxial cable.
-#. Connect a audio source such as a iPod or laptop to the analog in 1 (``In 1-2``).
+#. Connect an audio source such as an iPod or laptop audio out to the analog in 1 (``In 1-2``).
 
 
 .. figure:: images/hw_setup.*
@@ -62,4 +62,4 @@ Next steps
 ----------
 
 #. Examine the application code. In xTIMEcomposer Studio navigate to the ``src`` directory under ``app_analog_spdif_bridge_demo`` and double click on the ``main.xc`` file within it. The file will open in the central editor window.
-#. Try changing the ``SAMPLE_FREQUENCY_HZ`` define on line 12 of ``spdif_conf.h`` to 48000, 88200, 96000, 176400 or 192000 to generate S/PDIF signal at those frequencies.
+#. Try changing the ``SAMPLE_FREQUENCY_HZ`` define in ``i2s_spdif_conf.h`` to 48000, 88200, 96000, 176400 or 192000 to generate S/PDIF signal at those frequencies.
