@@ -6,9 +6,8 @@
 //::declaration
 #include <xs1.h>
 #include <platform.h>
-#include "spdif_transmit.h"
+#include "SpdifTransmit.h"
 #include "spdif_conf.h"
-#include <print.h>
 
 #define MASTER_CLOCK_FREQUENCY_44_1KHZ 22579200
 #define MASTER_CLOCK_FREQUENCY_48KHZ 24576000
@@ -30,8 +29,8 @@ unsigned int mclk_freq;
 
 //::spdif core
 void transmitSpdif(chanend c) {
-    spdif_transmit_port_config(oneBitPort, clockblock, masterClockPort);
-    spdif_transmit(oneBitPort, c);
+    SpdifTransmitPortConfig(oneBitPort, clockblock, masterClockPort);
+    SpdifTransmit(oneBitPort, c);
 }
 //::
 
@@ -59,6 +58,7 @@ void generate(chanend c) {
         i++;
         i %= WAVE_LEN;
     }
+    //outct(c, XS1_CT_END); // to stop SpdifTransmit thread
 }
 //::
 
