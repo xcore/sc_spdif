@@ -7,8 +7,9 @@ sc_spdif Change Log
 
   * Changes to dependencies:
 
-    - sc_i2c: 2.2.1rc0 -> 2.3.0beta1
+    - sc_i2c: 2.2.1rc0 -> 2.4.0beta0
 
+      + i2c_shared functions now take i2cPorts structure as param (rather than externed). This allows for
       + module_i2c_simple fixed to ACK correctly during multi-byte reads (all but the final byte will be now be ACKd)
       + module_i2c_simple can now be built with support to send repeated starts and retry reads and writes NACKd by slave
       + module_i2c_shared added to allow multiple logical cores to safely share a single I2C bus
