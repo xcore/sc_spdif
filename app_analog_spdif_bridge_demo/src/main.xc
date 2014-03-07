@@ -6,7 +6,7 @@
 
 #include <xs1.h>
 #include <platform.h>
-#include "spdif_transmit.h"
+#include "SpdifTransmit.h"
 #include "i2s_master.h"
 #include "xa_sk_audio_1v1.h"
 #include "i2s_spdif_conf.h"
@@ -54,13 +54,13 @@ int main(void){
         unsigned mclk_bclk_div = MCLK_FREQ/(SAMPLE_FREQUENCY_HZ * 64);
         audio_hw_init();
         audio_hw_config(SAMPLE_FREQUENCY_HZ);
-        spdif_transmit_port_config(oneBitPort,
+        SpdifTransmitPortConfig(oneBitPort,
                                    spdif_clockblock,
                                    i2s_resources.mck);
         par{
                 i2s_master(i2s_resources, c_i2s, mclk_bclk_div);
                 i2s_to_spdif_bridge(c_i2s,c_spdif);
-                spdif_transmit(oneBitPort,c_spdif);
+                SpdifTransmit(oneBitPort,c_spdif);
             }
         }
     }

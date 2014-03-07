@@ -1,0 +1,7 @@
+#Mon Feb 24 17:36:13 GMT+05:30 2014
+eclipse.preferences.version=1
+environment/project/com.xmos.cdt.toolchain.82330378/XMOS_MODULE_PATH/delimiter=\:
+environment/project/com.xmos.cdt.toolchain.82330378/XMOS_MODULE_PATH/operation=append
+environment/project/com.xmos.cdt.toolchain.82330378/XMOS_MODULE_PATH/value=/Users/sivakumar/Projects/SPDIF_release_merge/branch_ws/app_xscope_printing_timed_example\:/Users/sivakumar/Projects/SPDIF_release_merge/branch/sc_slicekit_support/module_slicekit_support
+environment/project/com.xmos.cdt.toolchain.82330378/append=true
+environment/project/com.xmos.cdt.toolchain.82330378/appendContributed=true

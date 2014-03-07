@@ -42,8 +42,8 @@
  * four bits should be removed whereupon the sample value should be sign
  * extended.
  *
- * The function does not return unless compiled with TEST defined in which case it returns any
- * time that it loses synchronisation.
+ * The function does not return unless compiled with TEST defined in which case
+ * it returns any time that it loses synchronisation.
  *
  * \param p               S/PDIF input port. This port must be 4-bit buffered,
  *                        declared as ``in buffered port:4``
@@ -52,11 +52,15 @@
  *
  * \param initial_divider initial divide for initial estimate of sample rate
  *                        For a 100Mhz reference clock, use an initial divider
- *                        of 1 for 192000, 2 for 96000/88200, and 4 for 48000/44100.
+ *                        of 1 for 192000, 2 for 96000/88200, and 4 for
+ *                        48000/44100.
  *
  * \param clk             clock block sourced from the 100 MHz reference clock.
  *
  **/
-void SpdifReceive(in buffered port:4 p, streaming chanend c, int initial_divider, clock clk);
+void SpdifReceive(  in buffered port:4 p,
+                    streaming chanend c,
+                    int initial_divider,
+                    clock clk);
 
 #endif // _SpdifReceive_h_

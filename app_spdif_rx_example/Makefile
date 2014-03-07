@@ -2,13 +2,13 @@
 # compiled for. It either refers to an XN file in the source directories
 # or a valid argument for the --target option when compiling.
 
-TARGET = XK-1
+TARGET = SLICEKIT-L16
 
 # The APP_NAME variable determines the name of the final .xe file. It should
 # not include the .xe postfix. If left blank the name will default to
 # the project name
 
-APP_NAME = app_example_rx
+APP_NAME = 
 
 # The flags passed to xcc when building the application
 # You can also set the following to override flags for a particular language:
@@ -22,7 +22,7 @@ XCC_FLAGS = -g
 
 # The USED_MODULES variable lists other module used by the application.
 
-USED_MODULES = module_spdif_rx
+USED_MODULES = module_i2c_single_port module_i2s_master module_slicekit_support module_spdif_rx
 
 
 #=============================================================================
