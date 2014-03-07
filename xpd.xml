@@ -4,9 +4,9 @@
         <component description = "Simple analog to S/PDIF converter using the audio sliceCARD." type = "demoCode" scope = "Example" path = "app_analog_spdif_bridge_demo" local = "false" id = "app_analog_spdif_bridge_demo" name = "Analog to S/PDIF Bridge Demo">
             <board>L16-sliceKIT</board>
             <board>XA-SK-AUDIO</board>
+            <componentDependency repo = "git://github.com/xcore/sc_slicekit_support.git" version = "1.0.4">module_slicekit_support</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_spdif" version = "1.4.1">module_spdif_tx</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.3.0">module_i2c_single_port</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_slicekit_support.git" version = "1.0.4">module_slicekit_support</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.3">module_i2s_master</componentDependency>
             <keyword>audio</keyword>
             <keyword>analog audio</keyword>
@@ -72,6 +72,7 @@
     <release parenthash = "0969d39eb469c4e386cea33c4a28d59f8d66b5e1" version = "1.4.0beta8" githash = "74361d9a6032e09ffae41ebb9f229a1161e9cf1c"></release>
     <release parenthash = "bb616f8891e8177ba6c09f9468ceafd9087219c1" version = "1.4.1beta0" githash = "f6a9564f1ae0171494052e3d49b79095e38bb97e"></release>
     <release parenthash = "687d6605a05d7134b74ebfacbf63a39fbf6606a5" version = "1.4.1beta1" githash = "a7ec95d0cd7fcd4447debcb7a05ab9d855f5cbee"></release>
+    <release parenthash = "ac10a68f45bc2a79a07fc9919771915eb62d66c0" version = "1.4.1beta2"></release>
     <subpartnumber>XM-000050-SW</subpartnumber>
     <vendor>XMOS</vendor>
     <version_defines></version_defines>

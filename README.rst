@@ -1,7 +1,7 @@
 S/PDIF 
 ......
 
-:Latest release: 1.4.1beta1
+:Latest release: 1.4.1beta2
 :Maintainer: XMOS Ltd
 :Description: S/PDIF Component
 
@@ -40,5 +40,6 @@ Required software (dependencies)
 ================================
 
   * sc_i2c (https://github.com/xcore/sc_i2c)
+  * sc_slicekit_support (https://github.com/xcore/sc_slicekit_support)
   * sc_i2s (https://github.com/xcore/sc_i2s)
 
