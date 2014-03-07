@@ -4,8 +4,9 @@
         <component description = "Simple analog to S/PDIF converter using the audio sliceCARD." type = "demoCode" scope = "Example" path = "app_analog_spdif_bridge_demo" local = "false" id = "app_analog_spdif_bridge_demo" name = "Analog to S/PDIF Bridge Demo">
             <board>L16-sliceKIT</board>
             <board>XA-SK-AUDIO</board>
-            <componentDependency repo = "git://github.com/xcore/sc_spdif" version = "1.4.1">module_spdif_tx</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.3.0">module_i2c_single_port</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_slicekit_support.git" version = "1.0.4">module_slicekit_support</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_spdif" version = "1.4.1">module_spdif_tx</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.3">module_i2s_master</componentDependency>
             <keyword>audio</keyword>
             <keyword>analog audio</keyword>
@@ -35,6 +36,10 @@
         <githash>8ebdd07c01d3419c26723d2d111503e0acbc4c70</githash>
         <uri>https://github.com/xcore/sc_i2s</uri>
         <version>1.4.3rc0</version>
+    </dependency>
+    <dependency repo = "sc_slicekit_support">
+        <githash>1fe91159be22d2e358e4dd457c5ed0cd8d17fc18</githash>
+        <uri>https://github.com/xcore/sc_slicekit_support</uri>
     </dependency>
     <description>S/PDIF Component</description>
     <docdir>module_spdif_tx/doc</docdir>
