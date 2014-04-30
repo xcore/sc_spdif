@@ -21,10 +21,6 @@
     </dependency>
     <description>S/PDIF Component</description>
     <docdir>doc</docdir>
-    <exclude_dir>module_spdif_rx</exclude_dir>
-    <exclude_dir>module_spdif_tx</exclude_dir>
-    <exclude_dir>app_example_tx</exclude_dir>
-    <exclude_dir>app_example_rx</exclude_dir>
     <location>ssh://git@github.com/xcore/sc_spdif</location>
     <name>sc_spdif</name>
     <maintainer>henkmuller</maintainer>
