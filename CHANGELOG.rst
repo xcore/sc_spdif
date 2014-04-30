@@ -4,6 +4,12 @@ sc_spdif Change Log
 1.3.2
 -----
 
+  * Changes to dependencies:
+
+    - sc_i2c: 2.4.0beta0 -> 2.4.1rc0
+
+      + module_i2c_simple header-file comments updated to correctly reflect API
+
 1.3.1
 -----
     - Added .type and .size directives to SpdifReceive. This is required for the function to show up in xTIMEcomposer binary viewer
