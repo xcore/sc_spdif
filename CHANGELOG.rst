@@ -6,7 +6,7 @@ sc_spdif Change Log
 
   * Changes to dependencies:
 
-    - sc_i2c: 2.4.0beta0 -> 2.4.1rc0
+    - sc_i2c: 2.4.0beta0 -> 2.4.1rc1
 
       + module_i2c_simple header-file comments updated to correctly reflect API
 
