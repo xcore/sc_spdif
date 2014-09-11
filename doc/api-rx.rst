@@ -52,3 +52,39 @@ and the data handling thread in parallel:
 .. literalinclude:: app_example_rx/src/main.xc
   :start-after: //::main program
   :end-before: //::
+  
+Parity
+------
+
+module_spdif_rx provides no parity checking, if this required it should be done by the application.
+This can be achived using a CRC operation as follows:
+
+/* Returns 1 for bad parity, else 0 */
+static inline int badParity(unsigned sample)
+{
+    unsigned X  = (sample >> 4);
+    crc32(X, 0, 1);
+    return X & 1;
+}
+
+Example usage:
+
+while(1)
+{
+  c_spdif :> sample
+
+  if(badParity(sample))
+  {
+    continue;  // Ignore sample
+  }
+  else
+  {
+     // Process sample
+     // ...
+  }
+}
+
+
+
+
+
