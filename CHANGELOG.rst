@@ -7,7 +7,7 @@ sc_spdif Change Log
 
   * Changes to dependencies:
 
-    - sc_i2c: 2.4.1rc1 -> 3.0.0alpha0
+    - sc_i2c: 2.4.1rc1 -> 3.0.0alpha1
 
       + Read support added to module_i2c_single_port (xCORE 200 only)
       + Retry on NACK added to module_i2c_single_port (matches module_i2c_simple)
