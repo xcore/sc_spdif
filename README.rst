@@ -1,7 +1,7 @@
 S/PDIF 
 ...........
 
-:Latest release: 1.3.3alpha0
+:Latest release: 1.3.3alpha1
 :Maintainer: henkmuller
 :Description: S/PDIF Component
 
