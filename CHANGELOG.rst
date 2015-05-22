@@ -1,6 +1,10 @@
 sc_spdif Change Log
 ===================
 
+1.3.4
+-----
+    - Changes to RX codebase to allow running on xCORE-200
+
 1.3.3
 -----
 
