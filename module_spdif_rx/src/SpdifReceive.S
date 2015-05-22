@@ -49,7 +49,7 @@
 
 .syntax architectural
 
-#define STACK  9
+#define STACK  10
 .globl   SpdifReceive
 .type    SpdifReceive, @function
 .linkset SpdifReceive.nstackwords,STACK
@@ -101,8 +101,15 @@ parseSpDifE:
     //     int initial_divider      r2
     //     clock clk                r3
     //   );
-
+.align 4
 SpdifReceive:
+#if defined(__XS2A__)
+.issue_mode single
+    ENTSP_lu6 STACK
+#else
+    ENTSP   STACK
+#endif
+
     //LDC     r4, 0xf
     //AND     r4, r3, r4
     //BRFT    r4, parseSpDifc
@@ -115,7 +122,7 @@ SpdifReceive:
 #endif
     SETSR  XS1_SR_FAST_MASK
 parseSpDifc:
-    ENTSP STACK
+
     STWSP   r4, 1
     STWSP   r5, 2
     STWSP   r6, 3
