@@ -8,11 +8,13 @@
 #include <xs1.h>
 #include <platform.h>
 #include "SpdifTransmit.h"
+#include "SpdifTransmit_4bitPort.h"
 
 #define SAMPLE_FREQUENCY_HZ 96000
 #define MASTER_CLOCK_FREQUENCY_HZ 12288000
 
 on stdcore[1] : buffered out port:32 oneBitPort = XS1_PORT_1K;
+on stdcore[1] : buffered out port:32 fourBitsPort = XS1_PORT_4D;
 on stdcore[1] : in port masterClockPort = XS1_PORT_1L;
 on stdcore[1] : clock clockblock = XS1_CLKBLK_1;
 //::
@@ -106,6 +108,13 @@ void transmitSpdif(chanend c) {
 }
 //::
 
+//::spdif thread 2
+void transmitSpdif_4bitPort(chanend c) {
+    SpdifTransmitPortConfig_4bitPort(fourBitsPort, clockblock, masterClockPort);
+    SpdifTransmit_4bitPort(fourBitsPort, c);
+}
+//::
+
 //::data generation
 #define WAVE_LEN 512
 void generate(chanend c) {
@@ -139,7 +148,10 @@ void example(void) {
    chan c;
    setupPll();
    par {
-      transmitSpdif(c);
+      //------- Use one of these functions -------
+	  transmitSpdif(c);
+	  //transmitSpdif_4bitPort(c);
+	  //------------------------------------------
       generate(c);
       clockGen();
    }
