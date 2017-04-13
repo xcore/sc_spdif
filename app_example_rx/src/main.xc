@@ -8,6 +8,7 @@
 #include "SpdifReceive.h"
 
 buffered in port:4 oneBitPort = XS1_PORT_1F;
+buffered in port:32 fourBitsPort = XS1_PORT_4D;
 clock clockblock = XS1_CLKBLK_1;
 //::
 
@@ -30,7 +31,10 @@ void handleSamples(streaming chanend c) {
 int main(void) {
     streaming chan c;
     par {
-        SpdifReceive(oneBitPort, c, 1, clockblock);
+        //------ Use one of these functions -------
+		SpdifReceive(oneBitPort, c, 1, clockblock);
+		//SpdifReceive_port4_buf32(fourBitsPort, c, 1, clockblock);
+		//-----------------------------------------
         handleSamples(c);
     }
     return 0;

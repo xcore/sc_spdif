@@ -59,4 +59,20 @@
  **/
 void SpdifReceive(in buffered port:4 p, streaming chanend c, int initial_divider, clock clk);
 
+
+/**
+ * \param p               S/PDIF input 4-bit port. This port must be 32-bit buffered,
+ *                        declared as ``in buffered port:32``
+ *
+ * \param c               channel to output samples to
+ *
+ * \param initial_divider initial divide for initial estimate of sample rate
+ *                        For a 100Mhz reference clock, use an initial divider
+ *                        of 1 for 192000, 2 for 96000/88200, and 4 for 48000/44100.
+ *
+ * \param clk             clock block sourced from the 100 MHz reference clock.
+ *
+ **/
+void SpdifReceive_port4_buf32(in buffered port:32 p, streaming chanend c, int initial_divider, clock clk); 
+
 #endif // _SpdifReceive_h_
