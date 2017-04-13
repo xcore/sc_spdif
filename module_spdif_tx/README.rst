@@ -1,5 +1,5 @@
-module_spdif_rx
+module_spdif_tx
 ================
 
 :scope: General Use
-:description: S/PDIF receive module
+:description: S/PDIF transmit module
